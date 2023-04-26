@@ -1,3 +1,6 @@
+#VSC folder
+.vscode/
+
 # Prerequisites
 *.d
 
