@@ -16,6 +16,10 @@ class Bot {
   /* Declare custom fields below */
 
   Pis chessBoard[boardSize][boardSize];
+  Pis king;
+  bool inCheck;
+  std::vector<Pis> whitePieces;
+  std::vector<Pis> blackPieces;
 
   /* Declare custom fields above */
   Bot();
@@ -33,6 +37,8 @@ class Bot {
    * @return your move
    */
   Move* calculateNextMove();
+
+  bool isInCheck();
 
   static std::string getBotName();
 };
