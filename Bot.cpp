@@ -6,7 +6,66 @@ const std::string Bot::BOT_NAME = "NuPuneBotul"; /* Edit this, escaped character
 extern PlaySide getEngineSide();
 
 Bot::Bot() { /* Initialize custom fields here */
-//pula
+  for(int i = 0; i < 8; i++)  {
+    switch (i)
+    {
+    case 0:
+      chessBoard[0][i] = Pis(ROOK, BLACK);
+      chessBoard[1][i] = Pis(PAWN, BLACK);
+      chessBoard[6][i] = Pis(PAWN, WHITE);
+      chessBoard[7][i] = Pis(ROOK, WHITE);
+      break;
+    
+    case 1:
+      chessBoard[0][i] = Pis(KNIGHT, BLACK);
+      chessBoard[1][i] = Pis(PAWN, BLACK);
+      chessBoard[6][i] = Pis(PAWN, WHITE);
+      chessBoard[7][i] = Pis(KNIGHT, WHITE);
+      break;
+    
+    case 2:
+      chessBoard[0][i] = Pis(BISHOP, BLACK);
+      chessBoard[1][i] = Pis(PAWN, BLACK);
+      chessBoard[6][i] = Pis(PAWN, WHITE);
+      chessBoard[7][i] = Pis(BISHOP, WHITE);
+      break;
+
+    case 3:
+      chessBoard[0][i] = Pis(QUEEN, BLACK);
+      chessBoard[1][i] = Pis(PAWN, BLACK);
+      chessBoard[6][i] = Pis(PAWN, WHITE);
+      chessBoard[7][i] = Pis(QUEEN, WHITE);
+      break;
+
+    case 4:
+      chessBoard[0][i] = Pis(KING, BLACK);
+      chessBoard[1][i] = Pis(PAWN, BLACK);
+      chessBoard[6][i] = Pis(PAWN, WHITE);
+      chessBoard[7][i] = Pis(KING, WHITE);
+      break;
+
+    case 5:
+      chessBoard[0][i] = Pis(BISHOP, BLACK);
+      chessBoard[1][i] = Pis(PAWN, BLACK);
+      chessBoard[6][i] = Pis(PAWN, WHITE);
+      chessBoard[7][i] = Pis(BISHOP, WHITE);
+      break;
+
+    case 6:
+      chessBoard[0][i] = Pis(KNIGHT, BLACK);
+      chessBoard[1][i] = Pis(PAWN, BLACK);
+      chessBoard[6][i] = Pis(PAWN, WHITE);
+      chessBoard[7][i] = Pis(KNIGHT, WHITE);
+      break;
+    
+    case 7:
+      chessBoard[0][i] = Pis(ROOK, BLACK);
+      chessBoard[1][i] = Pis(PAWN, BLACK);
+      chessBoard[6][i] = Pis(PAWN, WHITE);
+      chessBoard[7][i] = Pis(ROOK, WHITE);
+      break;
+    }
+  }
 }
 
 void Bot::recordMove(Move* move, PlaySide sideToMove) {

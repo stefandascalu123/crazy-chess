@@ -4,6 +4,9 @@
 
 #include "Move.h"
 #include "PlaySide.h"
+#include "Pis.h"
+
+#define boardSize 8
 
 class Bot {
  private:
@@ -11,6 +14,8 @@ class Bot {
 
  public:
   /* Declare custom fields below */
+
+  Pis chessBoard[boardSize][boardSize];
 
   /* Declare custom fields above */
   Bot();
