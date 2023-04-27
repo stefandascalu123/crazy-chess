@@ -71,6 +71,27 @@ Bot::Bot() { /* Initialize custom fields here */
 void Bot::recordMove(Move* move, PlaySide sideToMove) {
     /* You might find it useful to also separately
      * record last move in another custom field */
+
+    std::string source, destination;
+    if(move->source) {
+      source = move->source.value();
+    }
+
+    if(move->destination) {
+      destination = move->destination.value();
+    }
+
+    int source_x, source_y;
+    int destination_x, destination_y;
+
+    source_x = source[0] - 'a';
+    destination_x = destination[0] - 'a';
+
+    source_y = atoi(&source[1]);
+    destination_y = atoi(&destination[1]);
+
+    chessBoard[destination_y][destination_x] = chessBoard[source_y][source_x];
+    chessBoard[source_y][source_x] = Pis();
 }
 
 Move* Bot::calculateNextMove() {
