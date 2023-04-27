@@ -88,10 +88,25 @@ void Bot::recordMove(Move* move, PlaySide sideToMove) {
     destination_x = destination[0] - 'a';
 
     source_y = atoi(&source[1]);
+    source_y = boardSize - source_y;
     destination_y = atoi(&destination[1]);
+    destination_y = boardSize - destination_y;
 
     chessBoard[destination_y][destination_x] = chessBoard[source_y][source_x];
     chessBoard[source_y][source_x] = Pis();
+
+    std::ofstream fout("out.txt");
+
+  for(int i = 0 ; i < boardSize; i ++){
+    for(int j = 0 ; j < boardSize; j++) {
+      if(chessBoard[i][j].side == NONE) {
+        fout << "X ";
+      } else {
+        fout << chessBoard[i][j].type << " ";
+      }
+    }
+    fout << '\n';
+  }    
 }
 
 Move* Bot::calculateNextMove() {

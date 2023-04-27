@@ -20,6 +20,9 @@ $(PRGM): $(OBJS)
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -MMD -MP -c $< -o $@
 
+run:
+	./$(PRGM)
+
 clean:
 	rm -rf $(OBJS) $(OBJSH) $(DEPS) $(DEPSH)
 	rm -rf $(PRGM)
