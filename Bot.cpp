@@ -2,7 +2,7 @@
 
 #include <bits/stdc++.h>
 
-const std::string Bot::BOT_NAME = "MyBot"; /* Edit this, escaped characters are forbidden */
+const std::string Bot::BOT_NAME = "NuPuneBotul"; /* Edit this, escaped characters are forbidden */
 extern PlaySide getEngineSide();
 
 Bot::Bot() { /* Initialize custom fields here */
