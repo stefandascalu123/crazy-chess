@@ -6,6 +6,7 @@ const std::string Bot::BOT_NAME = "NuPuneBotul"; /* Edit this, escaped character
 extern PlaySide getEngineSide();
 
 Bot::Bot() { /* Initialize custom fields here */
+//pula
 }
 
 void Bot::recordMove(Move* move, PlaySide sideToMove) {
