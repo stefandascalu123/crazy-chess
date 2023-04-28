@@ -1,6 +1,3 @@
-#Xboard debut
-*.debug
-
 #VSC folder
 .vscode/
 

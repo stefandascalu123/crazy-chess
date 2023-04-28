@@ -11,9 +11,6 @@ public:
     Piece type;
     PlaySide side;
 
-    bool hasMoved;
-    int coordX, coordY;
-
     Pis();
     Pis(Piece origin, PlaySide side);
 };
