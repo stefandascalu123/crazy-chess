@@ -69,12 +69,15 @@ Bot::Bot() { /* Initialize custom fields here */
   }
 }
 
+int last_i, last_j;
+
 void Bot::recordMove(Move* move, PlaySide sideToMove) {
     /* You might find it useful to also separately
      * record last move in another custom field */
 
     std::string source, destination;
     Piece replacement;
+    chessBoard[last_i][last_j].didEnPassant = false;
     if(move->source) {
       source = move->source.value();
     }
@@ -103,8 +106,10 @@ void Bot::recordMove(Move* move, PlaySide sideToMove) {
     chessBoard[source_y][source_x] = Pis();
     chessBoard[destination_y][destination_x].hasMoved = true;
       if(chessBoard[destination_y][destination_x].type == PAWN) {
-        if(abs(destination_y - source_y) == 2) {
+        if(abs(destination_y - source_y) == 2 && (chessBoard[destination_y][destination_x + 1].side == getEngineSide() || chessBoard[destination_y][destination_x - 1].side == getEngineSide())) {
           chessBoard[destination_y][destination_x].didEnPassant = true;
+          last_i = destination_y;
+          last_j = destination_x;
         } else {
           chessBoard[destination_y][destination_x].didEnPassant = false;
         }
@@ -166,7 +171,8 @@ void Bot::recordMove(Move* move, PlaySide sideToMove) {
     } else {
       fout << "Not Check\n";
     }
-}
+    }
+
 
 bool Bot::moveIsLegal(Move *move) {
 
@@ -244,22 +250,23 @@ bool Bot::moveIsLegal(Move *move) {
 
 
 void Bot::getCastleMove(std::vector<Move*> &allMoves){
-  if(getEngineSide() == WHITE){
+  if(getEngineSide() == WHITE && chessBoard[7][4].type == KING && chessBoard[7][4].side == WHITE){
     if(!chessBoard[7][4].hasMoved && !chessBoard[7][7].hasMoved && chessBoard[7][5].side == NONE && chessBoard[7][6].side == NONE && !isCheck(chessBoard)){
-      if(moveIsLegal(Move::moveTo("e1", "g1")))
+      if(moveIsLegal(Move::moveTo("e1", "g1")) && moveIsLegal(Move::moveTo("e1", "f1"))){
         allMoves.push_back(Move::moveTo("e1", "g1"));
     }
     if(!chessBoard[7][4].hasMoved && !chessBoard[7][0].hasMoved && chessBoard[7][1].side == NONE && chessBoard[7][2].side == NONE && chessBoard[7][3].side == NONE && !isCheck(chessBoard)){
-      if(moveIsLegal(Move::moveTo("e1", "c1")))
+      if(moveIsLegal(Move::moveTo("e1", "c1")) && moveIsLegal(Move::moveTo("e1", "d1")))
         allMoves.push_back(Move::moveTo("e1", "c1"));
     }
-  } else if (getEngineSide() == BLACK) {
+    }
+  } else if (getEngineSide() == BLACK && chessBoard[0][4].type == KING && chessBoard[0][4].side == BLACK) {
     if(!chessBoard[0][4].hasMoved && !chessBoard[0][7].hasMoved && chessBoard[0][5].side == NONE && chessBoard[0][6].side == NONE && !isCheck(chessBoard)){
-      if(moveIsLegal(Move::moveTo("e8", "g8")))
+      if(moveIsLegal(Move::moveTo("e8", "g8")) && moveIsLegal(Move::moveTo("e8", "f8")))
         allMoves.push_back(Move::moveTo("e8", "g8"));
     }
     if(!chessBoard[0][4].hasMoved && !chessBoard[0][0].hasMoved && chessBoard[0][1].side == NONE && chessBoard[0][2].side == NONE && chessBoard[0][3].side == NONE && !isCheck(chessBoard)){
-      if(moveIsLegal(Move::moveTo("e8", "c8")))  
+      if(moveIsLegal(Move::moveTo("e8", "c8")) && moveIsLegal(Move::moveTo("e8", "d8")))  
         allMoves.push_back(Move::moveTo("e8", "c8"));
     }
   }
@@ -270,6 +277,38 @@ void Bot::getPawnMove(int i, int j, std::vector<Move*> &allMoves) {
           source = "";
           destination = "";
           if(getEngineSide() == WHITE) {
+            if(i == 1) {
+              if(chessBoard[i - 1][j].side == NONE) {
+                source = std::string(1, 'a' + j) + std::to_string(boardSize - i);
+                destination = std::string(1, 'a' + j) + std::to_string(boardSize - i + 1);
+                if(moveIsLegal(Move::moveTo(source, destination))) {
+                  allMoves.push_back(Move::promote(source, destination, ROOK));
+                  allMoves.push_back(Move::promote(source, destination, KNIGHT));
+                  allMoves.push_back(Move::promote(source, destination, BISHOP));
+                  allMoves.push_back(Move::promote(source, destination, QUEEN));
+                }
+              }
+              if(j - 1 >= 0 && chessBoard[i - 1][j - 1].side == BLACK) {
+                source = std::string(1, 'a' + j) + std::to_string(boardSize - i);
+                destination = std::string(1, 'a' + j - 1) + std::to_string(boardSize - i + 1);
+                if(moveIsLegal(Move::moveTo(source, destination))) {
+                  allMoves.push_back(Move::promote(source, destination, ROOK));
+                  allMoves.push_back(Move::promote(source, destination, KNIGHT));
+                  allMoves.push_back(Move::promote(source, destination, BISHOP));
+                  allMoves.push_back(Move::promote(source, destination, QUEEN));
+                }
+              }
+              if(j + 1 < boardSize && chessBoard[i - 1][j + 1].side == BLACK) {
+                source = std::string(1, 'a' + j) + std::to_string(boardSize - i);
+                destination = std::string(1, 'a' + j + 1) + std::to_string(boardSize - i + 1);
+                if(moveIsLegal(Move::moveTo(source, destination))) {
+                  allMoves.push_back(Move::promote(source, destination, ROOK));
+                  allMoves.push_back(Move::promote(source, destination, KNIGHT));
+                  allMoves.push_back(Move::promote(source, destination, BISHOP));
+                  allMoves.push_back(Move::promote(source, destination, QUEEN));
+                }
+              }
+            }
             if(chessBoard[i][j - 1].side == BLACK && chessBoard[i][j - 1].didEnPassant) {
               source = std::string(1, 'a' + j) + std::to_string(boardSize - i);
               destination = std::string(1, 'a' + j - 1) + std::to_string(boardSize - i - 1);
@@ -307,6 +346,38 @@ void Bot::getPawnMove(int i, int j, std::vector<Move*> &allMoves) {
               allMoves.push_back(Move::moveTo(source, destination));
             }
           } else {
+            if(i == 6) {
+              if(chessBoard[i + 1][j].side == NONE) {
+                source = std::string(1, 'a' + j) + std::to_string(boardSize - i);
+                destination = std::string(1, 'a' + j) + std::to_string(boardSize - i - 1);
+                if(moveIsLegal(Move::moveTo(source, destination))) { 
+                  allMoves.push_back(Move::promote(source, destination, ROOK));
+                  allMoves.push_back(Move::promote(source, destination, KNIGHT));
+                  allMoves.push_back(Move::promote(source, destination, BISHOP));
+                  allMoves.push_back(Move::promote(source, destination, QUEEN));
+                }
+              }
+              if(j - 1 >= 0 && chessBoard[i + 1][j - 1].side == WHITE) {
+                source = std::string(1, 'a' + j) + std::to_string(boardSize - i);
+                destination = std::string(1, 'a' + j - 1) + std::to_string(boardSize - i - 1);
+                if(moveIsLegal(Move::moveTo(source, destination))) {
+                  allMoves.push_back(Move::promote(source, destination, ROOK));
+                  allMoves.push_back(Move::promote(source, destination, KNIGHT));
+                  allMoves.push_back(Move::promote(source, destination, BISHOP));
+                  allMoves.push_back(Move::promote(source, destination, QUEEN));
+                }
+              }
+              if(j + 1 < boardSize && chessBoard[i + 1][j + 1].side == WHITE) {
+                source = std::string(1, 'a' + j) + std::to_string(boardSize - i);
+                destination = std::string(1, 'a' + j + 1) + std::to_string(boardSize - i - 1);
+                if(moveIsLegal(Move::moveTo(source, destination))) {
+                  allMoves.push_back(Move::promote(source, destination, ROOK));
+                  allMoves.push_back(Move::promote(source, destination, KNIGHT));
+                  allMoves.push_back(Move::promote(source, destination, BISHOP));
+                  allMoves.push_back(Move::promote(source, destination, QUEEN));
+                }
+              }
+            }
             if(chessBoard[i][j - 1].side == WHITE && chessBoard[i][j - 1].didEnPassant) {
               source = std::string(1, 'a' + j) + std::to_string(boardSize - i);
               destination = std::string(1, 'a' + j - 1) + std::to_string(boardSize - i - 1);
@@ -593,18 +664,18 @@ Move* Bot::calculateNextMove() {
         if(chessBoard[i][j].type == KNIGHT) {
           getKnightMove(i, j, allMoves);
         }
-        // if(chessBoard[i][j].type == ROOK) {
-        //   getRookMove(i, j, allMoves);
-        // }
+        if(chessBoard[i][j].type == ROOK) {
+          getRookMove(i, j, allMoves);
+        }
         if(chessBoard[i][j].type == BISHOP) {
           getBishopMove(i, j, allMoves);
         }
         if(chessBoard[i][j].type == QUEEN) {
           getQueenMove(i, j, allMoves);
         }
-        // if(chessBoard[i][j].type == KING) {
-        //   getKingMove(i, j, allMoves);
-        // }
+        if(chessBoard[i][j].type == KING) {
+          getKingMove(i, j, allMoves);
+        }
       }
     }
   }

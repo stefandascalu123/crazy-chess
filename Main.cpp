@@ -205,7 +205,7 @@ class EngineComponents {
       delete bot.value_or(nullptr);
       bot = new Bot();
       state = EngineState::PLAYING;
-      engineSide = PlaySide::BLACK;
+      engineSide = PlaySide::WHITE;
       sideToMove = PlaySide::WHITE;
       isStarted = false;
   }
@@ -231,11 +231,16 @@ class EngineComponents {
     toggleSideToMove();
   }
 
+  bool first = true;
+
+
   void processIncomingMove(Move *move) {
     if (state.value() == FORCE_MODE || state.value() == RECV_NEW) {
       bot.value()->recordMove(move, sideToMove);
       toggleSideToMove();
     } else if (state.value() == PLAYING) {
+
+      if(getEngineSide() == BLACK) {
       bot.value()->recordMove(move, sideToMove);
       toggleSideToMove();
 
@@ -245,6 +250,15 @@ class EngineComponents {
 
       delete response;
       toggleSideToMove();
+      } else if(getEngineSide() == WHITE) {
+        Move *response = bot.value()->calculateNextMove();
+        bot.value()->recordMove(response, getEngineSide());
+        emitMove(response);
+        delete response;
+
+        toggleSideToMove();
+        bot.value()->recordMove(move, sideToMove);
+      }
     } else {
       std::cerr << "[WARNING]: Unexpected move received (prior to new command)\n";
     }
