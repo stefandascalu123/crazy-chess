@@ -6,6 +6,7 @@ const std::string Bot::BOT_NAME = "NuPuneBotul"; /* Edit this, escaped character
 extern PlaySide getEngineSide();
 
 Bot::Bot() { /* Initialize custom fields here */
+  isInCheck = false;
   for(int i = 0; i < 8; i++)  {
     switch (i)
     {
@@ -73,6 +74,7 @@ void Bot::recordMove(Move* move, PlaySide sideToMove) {
      * record last move in another custom field */
 
     std::string source, destination;
+    Piece replacement;
     if(move->source) {
       source = move->source.value();
     }
@@ -81,6 +83,11 @@ void Bot::recordMove(Move* move, PlaySide sideToMove) {
       destination = move->destination.value();
     }
 
+    if(move->getReplacement()) {
+      replacement = move->getReplacement().value();
+    }
+
+    if(move->source && !move->getReplacement()) {
     int source_x, source_y;
     int destination_x, destination_y;
 
@@ -93,7 +100,33 @@ void Bot::recordMove(Move* move, PlaySide sideToMove) {
     destination_y = boardSize - destination_y;
 
     chessBoard[destination_y][destination_x] = chessBoard[source_y][source_x];
+    chessBoard[destination_y][destination_x].hasMoved = true;
     chessBoard[source_y][source_x] = Pis();
+    } else if(move->source && move->getReplacement()) {
+      int source_x, source_y;
+      int destination_x, destination_y;
+
+      source_x = source[0] - 'a';
+      destination_x = destination[0] - 'a';
+
+      source_y = atoi(&source[1]);
+      source_y = boardSize - source_y;
+      destination_y = atoi(&destination[1]);
+      destination_y = boardSize - destination_y;
+
+      chessBoard[destination_y][destination_x] = Pis(replacement, sideToMove);
+      chessBoard[destination_y][destination_x].hasMoved = true;
+      chessBoard[source_y][source_x] = Pis();
+    } else if(!move->source && move->getReplacement()) {
+      int destination_x, destination_y;
+
+      destination_x = destination[0] - 'a';
+      destination_y = atoi(&destination[1]);
+      destination_y = boardSize - destination_y;
+
+      chessBoard[destination_y][destination_x] = Pis(replacement, sideToMove);
+      chessBoard[destination_y][destination_x].hasMoved = true;
+    }
 
     std::ofstream fout("out.txt");
 

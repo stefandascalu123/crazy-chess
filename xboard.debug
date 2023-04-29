@@ -4,31 +4,173 @@ recognized 'normal' (-1) as variant normal
 recognized 'normal' (-1) as variant normal
 shuffleOpenings = 0
 shuffleOpenings = 0
-Version: xboard 4.9.1 + make ()
+Version: xboard 4.9.1 + fairymax ()
 Reset(1, 0) from gameMode 0
 recognized 'normal' (-1) as variant normal
 GameEnds(0, (null), 2)
 shuffleOpenings = 0
-StartChildProcess (dir=".") make run
-194 >first : xboard
+StartChildProcess (dir=".") fairymax
+248 >first : xboard
 protover 2
-211 <first : make: *** No rule to make target 'run'.  Stop.
-10195 >first : new
+301 <first : tellics say     Fairy-Max 5.0b
+302 <first : tellics say     by H.G. Muller
+302 <first : feature myname="Fairy-Max 5.0b"
+302 >first : accepted myname
+303 <first : feature memory=1 exclude=1
+304 >first : accepted memory
+304 >first : accepted exclude
+305 <first : feature setboard=0 xedit=1 ping=1 done=0
+305 >first : accepted setboard
+306 >first : accepted xedit
+306 >first : accepted ping
+307 >first : accepted done
+307 <first : feature variants="normal,nocastle,shatranj,asean,makruk,cambodian,ai-wok,courier,knightmate,capablanca,gothic,janus,falcon,cylinder,berolina,super,seirawan,spartan,great,light-brigade,king-of-the-hill,bifurcator,team-mate,los-alamos,ciccolini,mexican,grande-acedrex,roman,almost-wildebeest,fairy"
+308 >first : accepted variants
+308 <first : feature option="Resign -check 0"
+309 >first : accepted option
+311 <first : feature option="Resign Threshold -spin 800 200 1200"
+312 >first : accepted option
+313 <first : feature option="Claim draw after -spin 50 0 200"
+314 >first : accepted option
+314 <first : feature option="Ini File -file /usr/share/games/fairymax/fmax.ini"
+315 >first : accepted option
+315 <first : feature option="Multi-PV Margin -spin 0 0 1000"
+315 >first : accepted option
+316 <first : feature option="Variant fairy selects -combo FIDE-Clobberers /// Clobberers-FIDE /// FIDE-Nutters /// Nutters-FIDE /// Clobberers-Nutters /// Nutters-Clobberers /// FIDE-Rookies /// Rookies-FIDE /// Clobberers-Rookies /// Rookies-Clobberers /// Nutters-Rookies /// Rookies-Nutters"
+316 >first : accepted option
+316 <first : feature option="Makruk rules -combo makruk /// Cambodian /// Ai-wok"
+317 >first : accepted option
+317 <first : feature option="Dummy Slider Example -slider 20 0 100"
+317 >first : accepted option
+318 <first : feature option="Dummy String Example -string happy birthday!"
+318 >first : accepted option
+319 <first : feature option="Dummy Path Example -path ."
+319 >first : accepted option
+319 <first : feature option="Automatic persistent-hash dialog -check 0"
+320 >first : accepted option
+320 <first : feature option="Info -button"
+321 >first : accepted option
+321 <first : feature option="Save in hash file -button"
+321 >first : accepted option
+322 <first : feature option="Clear Hash -button"
+322 >first : accepted option
+323 <first : feature done=1
+323 >first : accepted done
+325 >first : memory 68
+325 >first : new
 random
-10196 >first : level 40 5 0
-10196 >first : post
-10197 >first : hard
+326 >first : level 40 5 0
+329 >first : post
+330 >first : hard
+333 >first : ping 1
+345 <first : pong 1
+4855 >first : quit
+Unload first
+StartChildProcess (dir=".") make run
+4863 >first : xboard
+protover 2
 Reset(1, 1) from gameMode 0
 recognized 'normal' (-1) as variant normal
 GameEnds(0, (null), 2)
-13567 >first : force
+4885 >first : force
 shuffleOpenings = 0
-13569 >first : new
+4888 >first : new
 random
-13571 >first : level 40 5 0
-13577 >first : post
-13579 >first : hard
-GameEnds(27, Error writing to first chess program, 2)
-18518 >first : result 0-1 {Error writing to first chess program}
-18519 >first : force
-18519 >first : quit
+4889 >first : level 40 5 0
+4890 >first : post
+4891 >first : hard
+4902 <first : ./Main
+4922 <first : 
+4923 <first : feature done=0 sigint=0 sigterm=0 san=0 reuse=0 usermove=1 analyze=0 ping=0 setboard=0 level=0 variants="crazyhouse" name="NuPuneBotul" myname="NuPuneBotul" done=1
+4924 >first : accepted done
+4924 >first : accepted sigint
+4925 >first : accepted sigterm
+4925 >first : accepted san
+4925 >first : accepted reuse
+4926 >first : accepted usermove
+4926 >first : accepted analyze
+4927 >first : accepted ping
+4927 >first : accepted setboard
+4928 >first : accepted level
+4928 >first : accepted variants
+4929 >first : accepted name
+4929 >first : accepted myname
+4930 >first : accepted done
+recognized 'normal' (-1) as variant normal
+4933 >first : new
+random
+4933 >first : level 40 5 0
+4934 >first : post
+4934 >first : hard
+recognized 'crazyhouse' (-1) as variant crazyhouse
+recognized 'crazyhouse' (-1) as variant crazyhouse
+recognized 'crazyhouse' (-1) as variant crazyhouse
+recognized 'crazyhouse' (-1) as variant crazyhouse
+recognized 'crazyhouse' (-1) as variant crazyhouse
+recognized 'crazyhouse' (-1) as variant crazyhouse
+recognized 'crazyhouse' (-1) as variant crazyhouse
+recognized 'crazyhouse' (-1) as variant crazyhouse
+recognized 'crazyhouse' (-1) as variant crazyhouse
+recognized 'crazyhouse' (-1) as variant crazyhouse
+recognized 'crazyhouse' (-1) as variant crazyhouse
+recognized 'crazyhouse' (-1) as variant crazyhouse
+recognized 'crazyhouse' (-1) as variant crazyhouse
+recognized 'crazyhouse' (-1) as variant crazyhouse
+recognized 'crazyhouse' (-1) as variant crazyhouse
+recognized 'crazyhouse' (-1) as variant crazyhouse
+recognized 'crazyhouse' (-1) as variant crazyhouse
+recognized 'crazyhouse' (-1) as variant crazyhouse
+recognized 'crazyhouse' (-1) as variant crazyhouse
+recognized 'crazyhouse' (-1) as variant crazyhouse
+recognized 'crazyhouse' (-1) as variant crazyhouse
+recognized 'crazyhouse' (-1) as variant crazyhouse
+Reset(1, 1) from gameMode 0
+recognized 'crazyhouse' (-1) as variant crazyhouse
+GameEnds(0, (null), 2)
+9496 >first : quit
+shuffleOpenings = 0
+StartChildProcess (dir=".") make run
+9542 >first : xboard
+protover 2
+9543 >first : new
+random
+9544 >first : variant crazyhouse
+9544 >first : level 40 5 0
+9545 >first : post
+9545 >first : hard
+9558 <first : ./Main
+9574 <first : 
+9574 <first : feature done=0 sigint=0 sigterm=0 san=0 reuse=0 usermove=1 analyze=0 ping=0 setboard=0 level=0 variants="crazyhouse" name="NuPuneBotul" myname="NuPuneBotul" done=1
+9574 >first : accepted done
+9575 >first : accepted sigint
+9575 >first : accepted sigterm
+9575 >first : accepted san
+9576 >first : accepted reuse
+9576 >first : accepted usermove
+9576 >first : accepted analyze
+9576 >first : accepted ping
+9577 >first : accepted setboard
+9577 >first : accepted level
+9577 >first : accepted variants
+9578 >first : accepted name
+9578 >first : accepted myname
+9579 >first : accepted done
+nps: w=-1, b=-1
+13392 >first : name stefandascalu123
+nps: w=-1, b=-1
+13394 >first : time 30000
+13395 >first : otim 30000
+book hit = (NULL)
+13396 >first : usermove 13397 >first : c2c4
+20270 >first : force
+21552 >first : usermove 21553 >first : d7d5
+25656 >first : usermove 25657 >first : c4d5
+28551 >first : usermove 28552 >first : e7e6
+Drop move 19, curr=4, x=11,y=0, p=0
+LegalDrop: 0 @ 3,3)
+LegalDrop: 0 @ 3,3)
+30988 >first : usermove 30989 >first : P@b4
+32466 >first : usermove 32467 >first : e6d5
+33936 >first : usermove 33938 >first : b4b5
+GameEnds(29, xboard exit, 2)
+36288 >first : quit

@@ -16,6 +16,7 @@ class Bot {
   /* Declare custom fields below */
 
   Pis chessBoard[boardSize][boardSize];
+  bool isInCheck;
 
   /* Declare custom fields above */
   Bot();
