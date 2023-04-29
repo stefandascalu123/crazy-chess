@@ -4,173 +4,168 @@ recognized 'normal' (-1) as variant normal
 recognized 'normal' (-1) as variant normal
 shuffleOpenings = 0
 shuffleOpenings = 0
-Version: xboard 4.9.1 + fairymax ()
+Version: xboard 4.9.1 + make ()
 Reset(1, 0) from gameMode 0
 recognized 'normal' (-1) as variant normal
 GameEnds(0, (null), 2)
 shuffleOpenings = 0
-StartChildProcess (dir=".") fairymax
-248 >first : xboard
-protover 2
-301 <first : tellics say     Fairy-Max 5.0b
-302 <first : tellics say     by H.G. Muller
-302 <first : feature myname="Fairy-Max 5.0b"
-302 >first : accepted myname
-303 <first : feature memory=1 exclude=1
-304 >first : accepted memory
-304 >first : accepted exclude
-305 <first : feature setboard=0 xedit=1 ping=1 done=0
-305 >first : accepted setboard
-306 >first : accepted xedit
-306 >first : accepted ping
-307 >first : accepted done
-307 <first : feature variants="normal,nocastle,shatranj,asean,makruk,cambodian,ai-wok,courier,knightmate,capablanca,gothic,janus,falcon,cylinder,berolina,super,seirawan,spartan,great,light-brigade,king-of-the-hill,bifurcator,team-mate,los-alamos,ciccolini,mexican,grande-acedrex,roman,almost-wildebeest,fairy"
-308 >first : accepted variants
-308 <first : feature option="Resign -check 0"
-309 >first : accepted option
-311 <first : feature option="Resign Threshold -spin 800 200 1200"
-312 >first : accepted option
-313 <first : feature option="Claim draw after -spin 50 0 200"
-314 >first : accepted option
-314 <first : feature option="Ini File -file /usr/share/games/fairymax/fmax.ini"
-315 >first : accepted option
-315 <first : feature option="Multi-PV Margin -spin 0 0 1000"
-315 >first : accepted option
-316 <first : feature option="Variant fairy selects -combo FIDE-Clobberers /// Clobberers-FIDE /// FIDE-Nutters /// Nutters-FIDE /// Clobberers-Nutters /// Nutters-Clobberers /// FIDE-Rookies /// Rookies-FIDE /// Clobberers-Rookies /// Rookies-Clobberers /// Nutters-Rookies /// Rookies-Nutters"
-316 >first : accepted option
-316 <first : feature option="Makruk rules -combo makruk /// Cambodian /// Ai-wok"
-317 >first : accepted option
-317 <first : feature option="Dummy Slider Example -slider 20 0 100"
-317 >first : accepted option
-318 <first : feature option="Dummy String Example -string happy birthday!"
-318 >first : accepted option
-319 <first : feature option="Dummy Path Example -path ."
-319 >first : accepted option
-319 <first : feature option="Automatic persistent-hash dialog -check 0"
-320 >first : accepted option
-320 <first : feature option="Info -button"
-321 >first : accepted option
-321 <first : feature option="Save in hash file -button"
-321 >first : accepted option
-322 <first : feature option="Clear Hash -button"
-322 >first : accepted option
-323 <first : feature done=1
-323 >first : accepted done
-325 >first : memory 68
-325 >first : new
-random
-326 >first : level 40 5 0
-329 >first : post
-330 >first : hard
-333 >first : ping 1
-345 <first : pong 1
-4855 >first : quit
-Unload first
 StartChildProcess (dir=".") make run
-4863 >first : xboard
+203 >first : xboard
 protover 2
-Reset(1, 1) from gameMode 0
-recognized 'normal' (-1) as variant normal
-GameEnds(0, (null), 2)
-4885 >first : force
-shuffleOpenings = 0
-4888 >first : new
-random
-4889 >first : level 40 5 0
-4890 >first : post
-4891 >first : hard
-4902 <first : ./Main
-4922 <first : 
-4923 <first : feature done=0 sigint=0 sigterm=0 san=0 reuse=0 usermove=1 analyze=0 ping=0 setboard=0 level=0 variants="crazyhouse" name="NuPuneBotul" myname="NuPuneBotul" done=1
-4924 >first : accepted done
-4924 >first : accepted sigint
-4925 >first : accepted sigterm
-4925 >first : accepted san
-4925 >first : accepted reuse
-4926 >first : accepted usermove
-4926 >first : accepted analyze
-4927 >first : accepted ping
-4927 >first : accepted setboard
-4928 >first : accepted level
-4928 >first : accepted variants
-4929 >first : accepted name
-4929 >first : accepted myname
-4930 >first : accepted done
-recognized 'normal' (-1) as variant normal
-4933 >first : new
-random
-4933 >first : level 40 5 0
-4934 >first : post
-4934 >first : hard
+220 <first : ./Main
+239 <first : 
+240 <first : feature done=0 sigint=0 sigterm=0 san=0 reuse=0 usermove=1 analyze=0 ping=0 setboard=0 level=0 variants="crazyhouse" name="NuPuneBotul" myname="NuPuneBotul" done=1
+240 >first : accepted done
+241 >first : accepted sigint
+241 >first : accepted sigterm
+242 >first : accepted san
+242 >first : accepted reuse
+243 >first : accepted usermove
+243 >first : accepted analyze
+244 >first : accepted ping
+244 >first : accepted setboard
+245 >first : accepted level
+245 >first : accepted variants
+246 >first : accepted name
+247 >first : accepted myname
+247 >first : accepted done
 recognized 'crazyhouse' (-1) as variant crazyhouse
-recognized 'crazyhouse' (-1) as variant crazyhouse
-recognized 'crazyhouse' (-1) as variant crazyhouse
-recognized 'crazyhouse' (-1) as variant crazyhouse
-recognized 'crazyhouse' (-1) as variant crazyhouse
-recognized 'crazyhouse' (-1) as variant crazyhouse
-recognized 'crazyhouse' (-1) as variant crazyhouse
-recognized 'crazyhouse' (-1) as variant crazyhouse
-recognized 'crazyhouse' (-1) as variant crazyhouse
-recognized 'crazyhouse' (-1) as variant crazyhouse
-recognized 'crazyhouse' (-1) as variant crazyhouse
-recognized 'crazyhouse' (-1) as variant crazyhouse
-recognized 'crazyhouse' (-1) as variant crazyhouse
-recognized 'crazyhouse' (-1) as variant crazyhouse
-recognized 'crazyhouse' (-1) as variant crazyhouse
-recognized 'crazyhouse' (-1) as variant crazyhouse
-recognized 'crazyhouse' (-1) as variant crazyhouse
-recognized 'crazyhouse' (-1) as variant crazyhouse
-recognized 'crazyhouse' (-1) as variant crazyhouse
-recognized 'crazyhouse' (-1) as variant crazyhouse
-recognized 'crazyhouse' (-1) as variant crazyhouse
-recognized 'crazyhouse' (-1) as variant crazyhouse
-Reset(1, 1) from gameMode 0
+Reset(1, 0) from gameMode 0
 recognized 'crazyhouse' (-1) as variant crazyhouse
 GameEnds(0, (null), 2)
-9496 >first : quit
+254 >first : quit
 shuffleOpenings = 0
 StartChildProcess (dir=".") make run
-9542 >first : xboard
+296 >first : xboard
 protover 2
-9543 >first : new
+296 >first : new
 random
-9544 >first : variant crazyhouse
-9544 >first : level 40 5 0
-9545 >first : post
-9545 >first : hard
-9558 <first : ./Main
-9574 <first : 
-9574 <first : feature done=0 sigint=0 sigterm=0 san=0 reuse=0 usermove=1 analyze=0 ping=0 setboard=0 level=0 variants="crazyhouse" name="NuPuneBotul" myname="NuPuneBotul" done=1
-9574 >first : accepted done
-9575 >first : accepted sigint
-9575 >first : accepted sigterm
-9575 >first : accepted san
-9576 >first : accepted reuse
-9576 >first : accepted usermove
-9576 >first : accepted analyze
-9576 >first : accepted ping
-9577 >first : accepted setboard
-9577 >first : accepted level
-9577 >first : accepted variants
-9578 >first : accepted name
-9578 >first : accepted myname
-9579 >first : accepted done
-nps: w=-1, b=-1
-13392 >first : name stefandascalu123
-nps: w=-1, b=-1
-13394 >first : time 30000
-13395 >first : otim 30000
-book hit = (NULL)
-13396 >first : usermove 13397 >first : c2c4
-20270 >first : force
-21552 >first : usermove 21553 >first : d7d5
-25656 >first : usermove 25657 >first : c4d5
-28551 >first : usermove 28552 >first : e7e6
-Drop move 19, curr=4, x=11,y=0, p=0
-LegalDrop: 0 @ 3,3)
-LegalDrop: 0 @ 3,3)
-30988 >first : usermove 30989 >first : P@b4
-32466 >first : usermove 32467 >first : e6d5
-33936 >first : usermove 33938 >first : b4b5
+297 >first : variant crazyhouse
+297 >first : level 40 5 0
+298 >first : post
+299 >first : hard
+315 <first : ./Main
+332 <first : 
+333 <first : feature done=0 sigint=0 sigterm=0 san=0 reuse=0 usermove=1 analyze=0 ping=0 setboard=0 level=0 variants="crazyhouse" name="NuPuneBotul" myname="NuPuneBotul" done=1
+334 >first : accepted done
+334 >first : accepted sigint
+335 >first : accepted sigterm
+335 >first : accepted san
+336 >first : accepted reuse
+336 >first : accepted usermove
+337 >first : accepted analyze
+338 >first : accepted ping
+338 >first : accepted setboard
+339 >first : accepted level
+339 >first : accepted variants
+340 >first : accepted name
+340 >first : accepted myname
+341 >first : accepted done
+11204 >first : force
+43622 >first : usermove 43623 >first : e2e4
+57256 >first : usermove 57257 >first : a7a6
+61001 >first : usermove 61002 >first : d1f3
+68758 >first : usermove 68760 >first : e7e6
+71861 >first : usermove 71862 >first : f3g4
+73608 >first : usermove 73609 >first : c7c5
+75254 >first : usermove 75256 >first : g4e6
+91175 >first : usermove 91176 >first : d7e6
+97006 >first : usermove 97008 >first : g1h3
+98663 >first : usermove 98664 >first : a6a5
+127388 >first : usermove 127389 >first : b1c3
+129856 >first : usermove 129857 >first : b7b6
+131806 >first : usermove 131807 >first : c3d5
+132927 >first : usermove 132928 >first : b6b5
+135143 >first : usermove 135144 >first : d5c7
+BackwardInner(14), current 15, forward 15
+138308 >first : undo
+BackwardInner(13), current 14, forward 15
+139861 >first : undo
+ForwardInner(14), current 13, forward 15
+140868 >first : usermove 140869 >first : b6b5
+ForwardInner(15), current 14, forward 15
+141845 >first : usermove 141846 >first : d5c7
+BackwardInner(14), current 15, forward 15
+145144 >first : undo
+BackwardInner(13), current 14, forward 15
+145309 >first : undo
+BackwardInner(12), current 13, forward 15
+145738 >first : undo
+BackwardInner(11), current 12, forward 15
+145816 >first : undo
+BackwardInner(10), current 11, forward 15
+145913 >first : undo
+BackwardInner(9), current 10, forward 15
+145990 >first : undo
+BackwardInner(8), current 9, forward 15
+146184 >first : undo
+BackwardInner(7), current 8, forward 15
+146262 >first : undo
+BackwardInner(6), current 7, forward 15
+146358 >first : undo
+BackwardInner(5), current 6, forward 15
+146433 >first : undo
+BackwardInner(4), current 5, forward 15
+146508 >first : undo
+BackwardInner(3), current 4, forward 15
+146584 >first : undo
+BackwardInner(2), current 3, forward 15
+146681 >first : undo
+BackwardInner(1), current 2, forward 15
+146758 >first : undo
+BackwardInner(0), current 1, forward 15
+146833 >first : undo
+BackwardInner(-1), current 0, forward 15
+ForwardInner(1), current 0, forward 15
+148069 >first : usermove 148070 >first : e2e4
+ForwardInner(2), current 1, forward 15
+148145 >first : usermove 148146 >first : a7a6
+ForwardInner(3), current 2, forward 15
+148242 >first : usermove 148243 >first : d1f3
+ForwardInner(4), current 3, forward 15
+148316 >first : usermove 148317 >first : e7e6
+ForwardInner(5), current 4, forward 15
+148396 >first : usermove 148397 >first : f3g4
+ForwardInner(6), current 5, forward 15
+148478 >first : usermove 148479 >first : c7c5
+ForwardInner(7), current 6, forward 15
+148575 >first : usermove 148576 >first : g4e6
+ForwardInner(8), current 7, forward 15
+148652 >first : usermove 148653 >first : d7e6
+ForwardInner(9), current 8, forward 15
+148755 >first : usermove 148756 >first : g1h3
+ForwardInner(10), current 9, forward 15
+148831 >first : usermove 148832 >first : a6a5
+ForwardInner(11), current 10, forward 15
+148929 >first : usermove 148930 >first : b1c3
+ForwardInner(12), current 11, forward 15
+149007 >first : usermove 149008 >first : b7b6
+ForwardInner(13), current 12, forward 15
+149106 >first : usermove 149107 >first : c3d5
+ForwardInner(14), current 13, forward 15
+149184 >first : usermove 149187 >first : b6b5
+ForwardInner(15), current 14, forward 15
+149286 >first : usermove 149287 >first : d5c7
+ForwardInner(16), current 15, forward 15
+ForwardInner(16), current 15, forward 15
+ForwardInner(16), current 15, forward 15
+ForwardInner(16), current 15, forward 15
+ForwardInner(16), current 15, forward 15
+ForwardInner(16), current 15, forward 15
+ForwardInner(16), current 15, forward 15
+ForwardInner(16), current 15, forward 15
+157581 >first : usermove 157582 >first : d8c7
+163098 >first : usermove 163099 >first : a2a4
+164776 >first : usermove 164777 >first : b5a4
+166078 >first : usermove 166079 >first : a1a4
+169864 >first : usermove 169865 >first : c7a7
+181518 >first : usermove 181518 >first : a4d4
+183900 >first : usermove 183901 >first : a7a6
+185160 >first : usermove 185161 >first : d4d8
+186540 >first : usermove 186541 >first : e8d8
+197233 >first : usermove 197234 >first : d2d3
+198998 >first : usermove 198999 >first : c5c4
+201024 >first : usermove 201025 >first : c1g5
+205804 >first : usermove 205805 >first : d8d7
 GameEnds(29, xboard exit, 2)
-36288 >first : quit
+218777 >first : quit
