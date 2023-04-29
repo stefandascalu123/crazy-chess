@@ -100,7 +100,6 @@ void Bot::recordMove(Move* move, PlaySide sideToMove) {
     destination_y = boardSize - destination_y;
 
     chessBoard[destination_y][destination_x] = chessBoard[source_y][source_x];
-    chessBoard[destination_y][destination_x].hasMoved = true;
     chessBoard[source_y][source_x] = Pis();
     } else if(move->source && move->getReplacement()) {
       int source_x, source_y;
@@ -115,7 +114,6 @@ void Bot::recordMove(Move* move, PlaySide sideToMove) {
       destination_y = boardSize - destination_y;
 
       chessBoard[destination_y][destination_x] = Pis(replacement, sideToMove);
-      chessBoard[destination_y][destination_x].hasMoved = true;
       chessBoard[source_y][source_x] = Pis();
     } else if(!move->source && move->getReplacement()) {
       int destination_x, destination_y;
@@ -125,21 +123,27 @@ void Bot::recordMove(Move* move, PlaySide sideToMove) {
       destination_y = boardSize - destination_y;
 
       chessBoard[destination_y][destination_x] = Pis(replacement, sideToMove);
-      chessBoard[destination_y][destination_x].hasMoved = true;
     }
 
     std::ofstream fout("out.txt");
 
-  for(int i = 0 ; i < boardSize; i ++){
-    for(int j = 0 ; j < boardSize; j++) {
-      if(chessBoard[i][j].side == NONE) {
-        fout << "X ";
-      } else {
-        fout << chessBoard[i][j].type << " ";
+    for(int i = 0 ; i < boardSize; i ++){
+      for(int j = 0 ; j < boardSize; j++) {
+        if(chessBoard[i][j].side == NONE) {
+          fout << "X ";
+        } else {
+          fout << chessBoard[i][j].type << " ";
+        }
       }
+      fout << '\n';
     }
-    fout << '\n';
-  }    
+
+    isInCheck = isCheck();
+    if(isInCheck) {
+      fout << "Check\n";
+    } else {
+      fout << "Not Check\n";
+    }
 }
 
 Move* Bot::calculateNextMove() {
@@ -149,6 +153,151 @@ Move* Bot::calculateNextMove() {
    * Return move that you are willing to submit
    * Move is to be constructed via one of the factory methods declared in Move.h */
   return Move::resign();
+}
+
+bool Bot::isCheck() {
+  int king_x, king_y;
+  for(int i = 0; i < boardSize ; i++) {
+    for(int j = 0 ; j < boardSize ; j++) {
+      if(chessBoard[i][j].type == KING && chessBoard[i][j].side == getEngineSide()) {
+        king_x = j;
+        king_y = i;
+        break;
+      }
+    }
+  }
+
+  std::ofstream fout("out2.txt");
+  fout << "King is at " << king_y << " " << king_x << '\n';
+
+  for(int i = king_y + 1 ; i < boardSize ; i++) {
+    if(chessBoard[i][king_x].side == getEngineSide()) {
+      break;
+    } else if(chessBoard[i][king_x].side != getEngineSide() && chessBoard[i][king_x].side != NONE) {
+      if(chessBoard[i][king_x].type == QUEEN || chessBoard[i][king_x].type == ROOK) {
+        return true;
+      } else {
+        break;
+      }
+    }
+  }
+  for(int i = king_y - 1 ; i >= 0 ; i --) {
+    if(chessBoard[i][king_x].side == getEngineSide()) {
+      break;
+    } else if(chessBoard[i][king_x].side != getEngineSide() && chessBoard[i][king_x].side != NONE) {
+      if(chessBoard[i][king_x].type == QUEEN || chessBoard[i][king_x].type == ROOK) {
+        return true;
+      } else {
+        break;
+      }
+    }
+  }
+  for(int i = king_x + 1 ; i < boardSize ; i++) {
+    if(chessBoard[king_y][i].side == getEngineSide()) {
+      break;
+    } else if(chessBoard[king_y][i].side != getEngineSide() && chessBoard[king_y][i].side != NONE) {
+      if(chessBoard[king_y][i].type == QUEEN || chessBoard[king_y][i].type == ROOK) {
+        return true;
+      } else {
+        break;
+      }
+    }
+  }
+  for(int i = king_x - 1 ; i >= 0 ; i--) {
+    if(chessBoard[king_y][i].side == getEngineSide()) {
+      break;
+    } else if(chessBoard[king_y][i].side != getEngineSide() && chessBoard[king_y][i].side != NONE) {
+      if(chessBoard[king_y][i].type == QUEEN || chessBoard[king_y][i].type == ROOK) {
+        return true;
+      } else {
+        break;
+      }
+    }
+  }
+  for(int i = king_y + 1, j = king_x + 1 ; i < boardSize && j < boardSize ; i++, j++) {
+    if(chessBoard[i][j].side == getEngineSide()) {
+      break;
+    } else if(chessBoard[i][j].side != getEngineSide() && chessBoard[i][j].side != NONE) {
+      if(chessBoard[i][j].type == QUEEN || chessBoard[i][j].type == BISHOP) {
+        return true;
+      } else {
+        break;
+      }
+    }
+  }
+  for(int i = king_y - 1, j = king_x - 1 ; i >= 0 && j >= 0 ; i--, j--) {
+    if(chessBoard[i][j].side == getEngineSide()) {
+      break;
+    } else if(chessBoard[i][j].side != getEngineSide() && chessBoard[i][j].side != NONE) {
+      if(chessBoard[i][j].type == QUEEN || chessBoard[i][j].type == BISHOP) {
+        return true;
+      } else {
+        break;
+      }
+    }
+  }
+  for(int i = king_y + 1, j = king_x - 1 ; i < boardSize && j >= 0 ; i++, j--) {
+    if(chessBoard[i][j].side == getEngineSide()) {
+      break;
+    } else if(chessBoard[i][j].side != getEngineSide() && chessBoard[i][j].side != NONE) {
+      if(chessBoard[i][j].type == QUEEN || chessBoard[i][j].type == BISHOP) {
+        return true;
+      } else {
+        break;
+      }
+    }
+  }
+  for(int i = king_y - 1, j = king_x + 1 ; i >= 0 && j < boardSize ; i--, j++) {
+    if(chessBoard[i][j].side == getEngineSide()) {
+      break;
+    } else if(chessBoard[i][j].side != getEngineSide() && chessBoard[i][j].side != NONE) {
+      if(chessBoard[i][j].type == QUEEN || chessBoard[i][j].type == BISHOP) {
+        return true;
+      } else {
+        break;
+      }
+    }
+  }
+  if(getEngineSide() == WHITE) {
+    if(king_y - 1 >= 0 && king_x - 1 >= 0 && chessBoard[king_y - 1][king_x - 1].side == BLACK && chessBoard[king_y - 1][king_x - 1].type == PAWN) {
+      return true;
+    }
+    if(king_y - 1 >= 0 && king_x + 1 < boardSize && chessBoard[king_y - 1][king_x + 1].side == BLACK && chessBoard[king_y - 1][king_x + 1].type == PAWN) {
+      return true;
+    }
+  } else {
+    if(king_y + 1 < boardSize && king_x - 1 >= 0 && chessBoard[king_y + 1][king_x - 1].side == WHITE && chessBoard[king_y + 1][king_x - 1].type == PAWN) {
+      return true;
+    }
+    if(king_y + 1 < boardSize && king_x + 1 < boardSize && chessBoard[king_y + 1][king_x + 1].side == WHITE && chessBoard[king_y + 1][king_x + 1].type == PAWN) {
+      return true;
+    }
+  }
+  if(king_y - 1 >= 0 && king_x - 2 >= 0 && chessBoard[king_y - 1][king_x - 2].type == KNIGHT && chessBoard[king_y - 1][king_x - 2].side != getEngineSide()) {
+    return true;
+  }
+  if(king_y - 2 >= 0 && king_x - 1 >= 0 && chessBoard[king_y - 2][king_x - 1].type == KNIGHT && chessBoard[king_y - 2][king_x - 1].side != getEngineSide()) {
+    return true;
+  }
+  if(king_y - 2 >= 0 && king_x + 1 < boardSize && chessBoard[king_y - 2][king_x + 1].type == KNIGHT && chessBoard[king_y - 2][king_x + 1].side != getEngineSide()) {
+    return true;
+  }
+  if(king_y - 1 >= 0 && king_x + 2 < boardSize && chessBoard[king_y - 1][king_x + 2].type == KNIGHT && chessBoard[king_y - 1][king_x + 2].side != getEngineSide()) {
+    return true;
+  }
+  if(king_y + 1 < boardSize && king_x + 2 < boardSize && chessBoard[king_y + 1][king_x + 2].type == KNIGHT && chessBoard[king_y + 1][king_x + 2].side != getEngineSide()) {
+    return true;
+  }
+  if(king_y + 2 < boardSize && king_x + 1 < boardSize && chessBoard[king_y + 2][king_x + 1].type == KNIGHT && chessBoard[king_y + 2][king_x + 1].side != getEngineSide()) {
+    return true;
+  }
+  if(king_y + 2 < boardSize && king_x - 1 >= 0 && chessBoard[king_y + 2][king_x - 1].type == KNIGHT && chessBoard[king_y + 2][king_x - 1].side != getEngineSide()) {
+    return true;
+  }
+  if(king_y + 1 < boardSize && king_x - 2 >= 0 && chessBoard[king_y + 1][king_x - 2].type == KNIGHT && chessBoard[king_y + 1][king_x - 2].side != getEngineSide()) {
+    return true;
+  }
+  return false;
 }
 
 std::string Bot::getBotName() { return Bot::BOT_NAME; }

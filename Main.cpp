@@ -205,7 +205,7 @@ class EngineComponents {
       delete bot.value_or(nullptr);
       bot = new Bot();
       state = EngineState::RECV_NEW;
-      engineSide = PlaySide::NONE;
+      engineSide = PlaySide::BLACK;
       sideToMove = PlaySide::WHITE;
       isStarted = false;
   }

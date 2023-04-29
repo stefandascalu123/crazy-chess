@@ -35,6 +35,8 @@ class Bot {
    */
   Move* calculateNextMove();
 
+  bool isCheck();
+
   static std::string getBotName();
 };
 #endif

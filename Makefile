@@ -1,4 +1,4 @@
-CXXFLAGS = -g -Wall -Werror -std=c++17
+CXXFLAGS = -g -Wall -std=c++17
 LDLIBS =
 
 PRGM  = Main
@@ -22,6 +22,9 @@ $(PRGM): $(OBJS)
 
 run:
 	./$(PRGM)
+
+debug:
+	gdb ./$(PRGM)
 
 clean:
 	rm -rf $(OBJS) $(OBJSH) $(DEPS) $(DEPSH)
