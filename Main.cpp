@@ -204,7 +204,7 @@ class EngineComponents {
   void newGame() {
       delete bot.value_or(nullptr);
       bot = new Bot();
-      state = EngineState::RECV_NEW;
+      state = EngineState::PLAYING;
       engineSide = PlaySide::BLACK;
       sideToMove = PlaySide::WHITE;
       isStarted = false;
@@ -240,6 +240,7 @@ class EngineComponents {
       toggleSideToMove();
 
       Move *response = bot.value()->calculateNextMove();
+      bot.value()->recordMove(response, getEngineSide());
       emitMove(response);
 
       delete response;

@@ -33,9 +33,21 @@ class Bot {
    * Calculates and return the bot's next move
    * @return your move
    */
+
+  bool moveIsLegal(Move* move);
+
+  void getPawnMove(int i, int j, std::vector<Move*> &allMoves);
+  void getKnightMove(int i, int j, std::vector<Move*> &allMoves);
+  void getRookMove(int i, int j, std::vector<Move*> &allMoves);
+  void getBishopMove(int i, int j, std::vector<Move*> &allMoves);
+  void getQueenMove(int i, int j, std::vector<Move*> &allMoves);
+  void getKingMove(int i, int j, std::vector<Move*> &allMoves);
+
   Move* calculateNextMove();
 
-  bool isCheck();
+  bool isCheck(Pis chessBoard[boardSize][boardSize]);
+
+
 
   static std::string getBotName();
 };
