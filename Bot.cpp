@@ -101,6 +101,28 @@ void Bot::recordMove(Move* move, PlaySide sideToMove) {
 
     chessBoard[destination_y][destination_x] = chessBoard[source_y][source_x];
     chessBoard[source_y][source_x] = Pis();
+    chessBoard[destination_y][destination_x].hasMoved = true;
+      if(chessBoard[destination_y][destination_x].type == PAWN) {
+        if(abs(destination_y - source_y) == 2) {
+          chessBoard[destination_y][destination_x].didEnPassant = true;
+        } else {
+          chessBoard[destination_y][destination_x].didEnPassant = false;
+        }
+      }
+      if(chessBoard[destination_y][destination_x].type == KING) {
+        if(abs(destination_x - source_x) == 2) {
+          chessBoard[destination_y][destination_x].hasMoved = true;
+          if(destination_x == 2) {
+            chessBoard[destination_y][3] = chessBoard[destination_y][0];
+            chessBoard[destination_y][0] = Pis();
+            chessBoard[destination_y][3].hasMoved = true;
+          } else {
+            chessBoard[destination_y][5] = chessBoard[destination_y][7];
+            chessBoard[destination_y][7] = Pis();
+            chessBoard[destination_y][5].hasMoved = true;
+          }
+        }
+      }
     } else if(move->source && move->getReplacement()) {
       int source_x, source_y;
       int destination_x, destination_y;
@@ -179,6 +201,20 @@ bool Bot::moveIsLegal(Move *move) {
 
     chessBoardCopy[destination_y][destination_x] = chessBoardCopy[source_y][source_x];
     chessBoardCopy[source_y][source_x] = Pis();
+    if(chessBoardCopy[destination_y][destination_x].type == KING) {
+        if(abs(destination_x - source_x) == 2) {
+          chessBoardCopy[destination_y][destination_x].hasMoved = true;
+          if(destination_x == 2) {
+            chessBoardCopy[destination_y][3] = chessBoardCopy[destination_y][0];
+            chessBoardCopy[destination_y][0] = Pis();
+            chessBoardCopy[destination_y][3].hasMoved = true;
+          } else {
+            chessBoardCopy[destination_y][5] = chessBoardCopy[destination_y][7];
+            chessBoardCopy[destination_y][7] = Pis();
+            chessBoardCopy[destination_y][5].hasMoved = true;
+          }
+        }
+      }
     } else if(move->source && move->getReplacement()) {
       int source_x, source_y;
       int destination_x, destination_y;
@@ -206,11 +242,46 @@ bool Bot::moveIsLegal(Move *move) {
     return !isCheck(chessBoardCopy);
 }
 
+
+void Bot::getCastleMove(std::vector<Move*> &allMoves){
+  if(getEngineSide() == WHITE){
+    if(!chessBoard[7][4].hasMoved && !chessBoard[7][7].hasMoved && chessBoard[7][5].side == NONE && chessBoard[7][6].side == NONE && !isCheck(chessBoard)){
+      if(moveIsLegal(Move::moveTo("e1", "g1")))
+        allMoves.push_back(Move::moveTo("e1", "g1"));
+    }
+    if(!chessBoard[7][4].hasMoved && !chessBoard[7][0].hasMoved && chessBoard[7][1].side == NONE && chessBoard[7][2].side == NONE && chessBoard[7][3].side == NONE && !isCheck(chessBoard)){
+      if(moveIsLegal(Move::moveTo("e1", "c1")))
+        allMoves.push_back(Move::moveTo("e1", "c1"));
+    }
+  } else if (getEngineSide() == BLACK) {
+    if(!chessBoard[0][4].hasMoved && !chessBoard[0][7].hasMoved && chessBoard[0][5].side == NONE && chessBoard[0][6].side == NONE && !isCheck(chessBoard)){
+      if(moveIsLegal(Move::moveTo("e8", "g8")))
+        allMoves.push_back(Move::moveTo("e8", "g8"));
+    }
+    if(!chessBoard[0][4].hasMoved && !chessBoard[0][0].hasMoved && chessBoard[0][1].side == NONE && chessBoard[0][2].side == NONE && chessBoard[0][3].side == NONE && !isCheck(chessBoard)){
+      if(moveIsLegal(Move::moveTo("e8", "c8")))  
+        allMoves.push_back(Move::moveTo("e8", "c8"));
+    }
+  }
+}
+
 void Bot::getPawnMove(int i, int j, std::vector<Move*> &allMoves) {
   std::string source, destination;
           source = "";
           destination = "";
           if(getEngineSide() == WHITE) {
+            if(chessBoard[i][j - 1].side == BLACK && chessBoard[i][j - 1].didEnPassant) {
+              source = std::string(1, 'a' + j) + std::to_string(boardSize - i);
+              destination = std::string(1, 'a' + j - 1) + std::to_string(boardSize - i - 1);
+              if(moveIsLegal(Move::moveTo(source, destination)))
+                allMoves.push_back(Move::moveTo(source, destination));
+            }
+            if(chessBoard[i][j + 1].side == BLACK && chessBoard[i][j + 1].didEnPassant) {
+              source = std::string(1, 'a' + j) + std::to_string(boardSize - i);
+              destination = std::string(1, 'a' + j + 1) + std::to_string(boardSize - i - 1);
+              if(moveIsLegal(Move::moveTo(source, destination)))
+                allMoves.push_back(Move::moveTo(source, destination));
+            }
             if(i - 1 > 0 && chessBoard[i - 1][j].side == NONE) {
             source = std::string(1, 'a' + j) + std::to_string(boardSize - i);
             destination = std::string(1, 'a' + j) + std::to_string(boardSize - i + 1);
@@ -236,6 +307,18 @@ void Bot::getPawnMove(int i, int j, std::vector<Move*> &allMoves) {
               allMoves.push_back(Move::moveTo(source, destination));
             }
           } else {
+            if(chessBoard[i][j - 1].side == WHITE && chessBoard[i][j - 1].didEnPassant) {
+              source = std::string(1, 'a' + j) + std::to_string(boardSize - i);
+              destination = std::string(1, 'a' + j - 1) + std::to_string(boardSize - i - 1);
+              if(moveIsLegal(Move::moveTo(source, destination)))
+                allMoves.push_back(Move::moveTo(source, destination));
+            }
+            if(chessBoard[i][j + 1].side == WHITE && chessBoard[i][j + 1].didEnPassant) {
+              source = std::string(1, 'a' + j) + std::to_string(boardSize - i);
+              destination = std::string(1, 'a' + j + 1) + std::to_string(boardSize - i - 1);
+              if(moveIsLegal(Move::moveTo(source, destination)))
+                allMoves.push_back(Move::moveTo(source, destination));
+            }
             if(i + 1 < boardSize - 1 && chessBoard[i + 1][j].side == NONE) {
             source = std::string(1, 'a' + j) + std::to_string(boardSize - i);
             destination = std::string(1, 'a' + j) + std::to_string(boardSize - i - 1);
@@ -510,21 +593,22 @@ Move* Bot::calculateNextMove() {
         if(chessBoard[i][j].type == KNIGHT) {
           getKnightMove(i, j, allMoves);
         }
-        if(chessBoard[i][j].type == ROOK) {
-          getRookMove(i, j, allMoves);
-        }
+        // if(chessBoard[i][j].type == ROOK) {
+        //   getRookMove(i, j, allMoves);
+        // }
         if(chessBoard[i][j].type == BISHOP) {
           getBishopMove(i, j, allMoves);
         }
         if(chessBoard[i][j].type == QUEEN) {
           getQueenMove(i, j, allMoves);
         }
-        if(chessBoard[i][j].type == KING) {
-          getKingMove(i, j, allMoves);
-        }
+        // if(chessBoard[i][j].type == KING) {
+        //   getKingMove(i, j, allMoves);
+        // }
       }
     }
   }
+  getCastleMove(allMoves);
   if(allMoves.size()!= 0) {
     return allMoves[rand() % allMoves.size()];
   }

@@ -10,5 +10,7 @@ Pis::Pis(Piece origin, PlaySide side){
     this->origin = origin;
     this->type = origin;
     this->side = side;
+    this->didEnPassant = false;
+    this->hasMoved = false;
 }
 

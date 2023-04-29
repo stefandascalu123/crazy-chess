@@ -10,310 +10,135 @@ recognized 'normal' (-1) as variant normal
 GameEnds(0, (null), 2)
 shuffleOpenings = 0
 StartChildProcess (dir=".") make run
-268 >first : xboard
+306 >first : xboard
 protover 2
-288 <first : ./Main
-309 <first : 
-310 <first : feature done=0 sigint=0 sigterm=0 san=0 reuse=0 usermove=1 analyze=0 ping=0 setboard=0 level=0 variants="crazyhouse" name="NuPuneBotul" myname="NuPuneBotul" done=1
-312 >first : accepted done
-313 >first : accepted sigint
-313 >first : accepted sigterm
-314 >first : accepted san
-314 >first : accepted reuse
-314 >first : accepted usermove
-315 >first : accepted analyze
-315 >first : accepted ping
-315 >first : accepted setboard
-316 >first : accepted level
-316 >first : accepted variants
-317 >first : accepted name
-317 >first : accepted myname
-318 >first : accepted done
+423 <first : ./Main
+461 <first : 
+462 <first : feature done=0 sigint=0 sigterm=0 san=0 reuse=0 usermove=1 analyze=0 ping=0 setboard=0 level=0 variants="crazyhouse" name="NuPuneBotul" myname="NuPuneBotul" done=1
+462 >first : accepted done
+463 >first : accepted sigint
+463 >first : accepted sigterm
+463 >first : accepted san
+464 >first : accepted reuse
+464 >first : accepted usermove
+464 >first : accepted analyze
+465 >first : accepted ping
+465 >first : accepted setboard
+465 >first : accepted level
+466 >first : accepted variants
+466 >first : accepted name
+467 >first : accepted myname
+467 >first : accepted done
 recognized 'crazyhouse' (-1) as variant crazyhouse
 Reset(1, 0) from gameMode 0
 recognized 'crazyhouse' (-1) as variant crazyhouse
 GameEnds(0, (null), 2)
-322 >first : quit
+470 >first : quit
 shuffleOpenings = 0
 StartChildProcess (dir=".") make run
-403 >first : xboard
+539 >first : xboard
 protover 2
-404 >first : new
+547 >first : new
 random
-404 >first : variant crazyhouse
-405 >first : level 40 5 0
-405 >first : post
-406 >first : hard
-423 <first : ./Main
-438 <first : 
-438 <first : feature done=0 sigint=0 sigterm=0 san=0 reuse=0 usermove=1 analyze=0 ping=0 setboard=0 level=0 variants="crazyhouse" name="NuPuneBotul" myname="NuPuneBotul" done=1
-439 >first : accepted done
-439 >first : accepted sigint
-440 >first : accepted sigterm
-440 >first : accepted san
-441 >first : accepted reuse
-442 >first : accepted usermove
-443 >first : accepted analyze
-443 >first : accepted ping
-444 >first : accepted setboard
-444 >first : accepted level
-445 >first : accepted variants
-445 >first : accepted name
-446 >first : accepted myname
-446 >first : accepted done
+548 >first : variant crazyhouse
+549 >first : level 40 5 0
+550 >first : post
+550 >first : hard
+589 <first : ./Main
+623 <first : 
+626 <first : feature done=0 sigint=0 sigterm=0 san=0 reuse=0 usermove=1 analyze=0 ping=0 setboard=0 level=0 variants="crazyhouse" name="NuPuneBotul" myname="NuPuneBotul" done=1
+627 >first : accepted done
+630 >first : accepted sigint
+630 >first : accepted sigterm
+632 >first : accepted san
+633 >first : accepted reuse
+633 >first : accepted usermove
+634 >first : accepted analyze
+634 >first : accepted ping
+635 >first : accepted setboard
+635 >first : accepted level
+636 >first : accepted variants
+636 >first : accepted name
+637 >first : accepted myname
+637 >first : accepted done
 nps: w=-1, b=-1
-3934 >first : name stefandascalu123
+2500 >first : name stefandascalu123
 nps: w=-1, b=-1
-3937 >first : time 30000
-3938 >first : otim 30000
+2503 >first : time 30000
+2504 >first : otim 30000
 book hit = (NULL)
-3940 >first : usermove 3941 >first : d2d3
-4019 <first : move g8h6
-5129 >first : time 29991
-5130 >first : otim 29889
+2506 >first : usermove 2507 >first : d2d4
+2528 <first : move g8h6
+3974 >first : time 29997
+3975 >first : otim 29855
 book hit = (NULL)
-5132 >first : usermove 5133 >first : e1d2
-5209 <first : move b7b5
-6016 >first : time 29983
-6017 >first : otim 29808
+3977 >first : usermove 3978 >first : d1d3
+3994 <first : move g7g5
+6222 >first : time 29995
+6223 >first : otim 29632
 book hit = (NULL)
-6019 >first : usermove 6020 >first : d2e1
-6099 <first : move d7d6
-6919 >first : time 29975
-6920 >first : otim 29726
+6225 >first : usermove 6227 >first : d3h7
+6240 <first : move a7a6
+7616 >first : time 29993
+7618 >first : otim 29495
 book hit = (NULL)
-6922 >first : usermove 6924 >first : d1d2
-7000 <first : move f7f6
-7772 >first : time 29966
-7773 >first : otim 29649
+7620 >first : usermove 7621 >first : h7f7
+7646 <first : move h6f7
+10844 >first : time 29990
+10845 >first : otim 29175
 book hit = (NULL)
-7775 >first : usermove 7776 >first : d2d1
-7851 <first : move c7c5
-8522 >first : time 29959
-8523 >first : otim 29582
+10847 >first : usermove 10848 >first : c1g5
+10873 <first : move f8g7
+13616 >first : time 29987
+13617 >first : otim 28901
 book hit = (NULL)
-8525 >first : usermove 8526 >first : d1d2
-8601 <first : move a7a5
-9284 >first : time 29950
-9286 >first : otim 29514
+13618 >first : usermove 13618 >first : g5e7
+13640 <first : move f7d6
+15214 >first : time 29984
+15216 >first : otim 28744
 book hit = (NULL)
-9288 >first : usermove 9289 >first : d2d1
-9364 <first : move c8f5
-10320 >first : time 29942
-10321 >first : otim 29418
+15218 >first : usermove 15219 >first : e7d8
+15252 <first : move c7c6
+18899 >first : time 29981
+18900 >first : otim 28379
 book hit = (NULL)
-10322 >first : usermove 10323 >first : d1d2
-10400 <first : move e7e6
-11089 >first : time 29934
-11090 >first : otim 29350
+18902 >first : usermove 18903 >first : d8a5
+18927 <first : move g7h6
+22673 >first : time 29978
+22675 >first : otim 28004
 book hit = (NULL)
-11092 >first : usermove 11093 >first : d2a5
-11195 <first : move g7g6
-11791 >first : time 29924
-11793 >first : otim 29290
+22677 >first : usermove 22678 >first : b1c3
+22702 <first : move h6f4
+28331 >first : time 29975
+28332 >first : otim 27442
 book hit = (NULL)
-11794 >first : usermove 11796 >first : a5b5
-11872 <first : move b8d7
-13032 >first : time 29915
-13033 >first : otim 29174
+28333 >first : usermove 28333 >first : c3e4
+28353 <first : move c6c5
+32950 >first : time 29972
+32951 >first : otim 26982
 book hit = (NULL)
-13035 >first : usermove 13035 >first : b5c5
-13112 <first : move d7e5
-13968 >first : time 29907
-13970 >first : otim 29089
+32953 >first : usermove 32954 >first : e1d1
+32981 <first : move b7b6
+34010 >first : time 29969
+34011 >first : otim 26879
 book hit = (NULL)
-13972 >first : usermove 13973 >first : c5d6
-14047 <first : move e5g4
-14746 >first : time 29899
-14747 >first : otim 29019
+34013 >first : usermove 34014 >first : d1e1
+34043 <first : move f4e5
+35539 >first : time 29966
+35541 >first : otim 26730
 book hit = (NULL)
-14749 >first : usermove 14750 >first : d6d8
-14825 <first : move e8f7
-16341 >first : time 29891
-16342 >first : otim 28867
+35542 >first : usermove 35543 >first : e1d1
+35571 <first : move c8b7
+39786 >first : time 29963
+39787 >first : otim 26308
 book hit = (NULL)
-16344 >first : usermove 16345 >first : d8a8
-16441 <first : move e6e5
-17547 >first : time 29881
-17549 >first : otim 28757
+39789 >first : usermove 39790 >first : d1e1
+39816 <first : move b7e4
+42272 >first : time 29960
+42273 >first : otim 26063
 book hit = (NULL)
-17550 >first : usermove 17551 >first : a8e4
-17650 <first : move g4h2
-18346 >first : time 29871
-18347 >first : otim 28687
-book hit = (NULL)
-18350 >first : usermove 18351 >first : e4e5
-18427 <first : move f5e6
-19728 >first : time 29863
-19729 >first : otim 28557
-book hit = (NULL)
-19731 >first : usermove 19732 >first : e5e6
-19807 <first : move f7g7
-20950 >first : time 29855
-20951 >first : otim 28443
-book hit = (NULL)
-20953 >first : usermove 20954 >first : e6f6
-21029 <first : move g7g8
-22287 >first : time 29847
-22289 >first : otim 28317
-book hit = (NULL)
-22291 >first : usermove 22291 >first : f6g6
-22366 <first : move f8g7
-23754 >first : time 29839
-23756 >first : otim 28179
-book hit = (NULL)
-23758 >first : usermove 23759 >first : g6g7
-23834 <first : move g8g7
-26602 >first : time 29831
-26604 >first : otim 27902
-book hit = (NULL)
-26606 >first : usermove 26607 >first : h1h2
-26683 <first : move g7g6
-27575 >first : time 29822
-27576 >first : otim 27813
-book hit = (NULL)
-27577 >first : usermove 27578 >first : h2h6
-27674 <first : move g6f5
-28344 >first : time 29812
-28345 >first : otim 27746
-book hit = (NULL)
-28347 >first : usermove 28348 >first : h6h7
-28422 <first : move h8e8
-29410 >first : time 29804
-29410 >first : otim 27647
-book hit = (NULL)
-29411 >first : usermove 29412 >first : h7e7
-29508 <first : move e8e7
-30856 >first : time 29794
-30857 >first : otim 27513
-book hit = (NULL)
-30859 >first : usermove 30860 >first : d3d4
-30935 <first : move e7h7
-31535 >first : time 29786
-31537 >first : otim 27453
-book hit = (NULL)
-31539 >first : usermove 31540 >first : d4d5
-31617 <first : move h7b7
-32209 >first : time 29778
-32211 >first : otim 27394
-book hit = (NULL)
-32212 >first : usermove 32213 >first : d5d6
-32289 <first : move b7c7
-33031 >first : time 29770
-33032 >first : otim 27320
-book hit = (NULL)
-33034 >first : usermove 33035 >first : d6c7
-33110 <first : move f5f6
-33949 >first : time 29762
-33951 >first : otim 27236
-book hit = (NULL)
-33953 >first : usermove 33954 >first : c7c8q
-33977 <first : move f6g7
-36091 >first : time 29759
-36093 >first : otim 27025
-book hit = (NULL)
-36094 >first : usermove 36096 >first : c8c7
-36172 <first : move g7f8
-36835 >first : time 29751
-36836 >first : otim 26958
-book hit = (NULL)
-36838 >first : usermove 36839 >first : c7c8
-36913 <first : move f8g7
-37533 >first : time 29743
-37535 >first : otim 26897
-book hit = (NULL)
-37537 >first : usermove 37537 >first : c8c7
-37613 <first : move g7h8
-38267 >first : time 29735
-38268 >first : otim 26831
-book hit = (NULL)
-38269 >first : usermove 38270 >first : c7c8
-38346 <first : move h8g7
-38993 >first : time 29727
-38994 >first : otim 26767
-book hit = (NULL)
-38996 >first : usermove 38997 >first : c8c7
-39075 <first : move g7f6
-39701 >first : time 29718
-39703 >first : otim 26704
-book hit = (NULL)
-39705 >first : usermove 39706 >first : c7c8
-39783 <first : move f6e5
-40961 >first : time 29710
-40962 >first : otim 26586
-book hit = (NULL)
-40963 >first : usermove 40963 >first : c8c7
-41037 <first : move e5f5
-51226 >first : time 29702
-51227 >first : otim 25568
-book hit = (NULL)
-51229 >first : usermove 51230 >first : c7e7
-51305 <first : move f5g4
-53261 >first : time 29694
-53262 >first : otim 25372
-book hit = (NULL)
-53265 >first : usermove 53266 >first : f2f3
-53343 <first : move g4h5
-60295 >first : time 29686
-60295 >first : otim 24677
-book hit = (NULL)
-60296 >first : usermove 60297 >first : g1h3
-60395 <first : move h5g6
-65781 >first : time 29676
-65782 >first : otim 54139
-book hit = (NULL)
-65784 >first : usermove 65785 >first : e7g5
-65884 <first : move g6f7
-70885 >first : time 59666
-70886 >first : otim 53639
-book hit = (NULL)
-70889 >first : usermove 70890 >first : h3f4
-70989 <first : move f7f8
-71913 >first : time 59655
-71913 >first : otim 53546
-book hit = (NULL)
-71915 >first : usermove 71915 >first : f4e6
-72013 <first : move f8f7
-76145 >first : time 59645
-76146 >first : otim 53133
-book hit = (NULL)
-76149 >first : usermove 76150 >first : g5f5
-76226 <first : move f7e8
-82445 >first : time 59637
-82446 >first : otim 52511
-book hit = (NULL)
-82448 >first : usermove 82449 >first : e6c7
-82549 <first : move e8e7
-87238 >first : time 59626
-87239 >first : otim 52042
-book hit = (NULL)
-87241 >first : usermove 87242 >first : f5e6
-87319 <first : move e7d8
-97183 >first : time 59618
-97184 >first : otim 51056
-book hit = (NULL)
-97186 >first : usermove 97187 >first : e6d6
-97261 <first : move d8c8
-108959 >first : time 59610
-108960 >first : otim 49886
-book hit = (NULL)
-108962 >first : usermove 108963 >first : c7b5
-109061 <first : move c8b7
-116217 >first : time 59600
-116219 >first : otim 49171
-book hit = (NULL)
-116221 >first : usermove 116222 >first : d6c7
-116297 <first : move b7a8
-LegalDrop: 70 @ 5,0)
-LegalDrop: 70 @ 5,0)
-LegalDrop: 70 @ 5,0)
-LegalDrop: 70 @ 5,0)
-122311 >first : time 59592
-122312 >first : otim 48570
-book hit = (NULL)
-122314 >first : usermove 122315 >first : b5a7
-122412 <first : resign
-GameEnds(26, Black resigns, 1)
-122414 >first : result 1-0 {Black resigns}
-122415 >first : quit
-GameEnds(26, Black resigns, 2)
+42274 >first : usermove 42275 >first : e1d1
+42299 <first : move e8g8
+GameEnds(29, xboard exit, 2)
+45618 >first : result * {xboard exit}
+45619 >first : quit

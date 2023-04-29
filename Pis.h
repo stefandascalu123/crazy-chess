@@ -11,7 +11,8 @@ public:
     Piece origin;
     Piece type;
     PlaySide side;
-    Moved moved;
+    bool didEnPassant;
+    bool hasMoved;
 
     Pis();
     Pis(Piece origin, PlaySide side);

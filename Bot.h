@@ -36,6 +36,11 @@ class Bot {
 
   bool moveIsLegal(Move* move);
 
+  bool isCastleLegal(int type);
+
+  bool didEnPassant(Move* move);
+  void getCastleMove(std::vector<Move*> &allMoves);
+
   void getPawnMove(int i, int j, std::vector<Move*> &allMoves);
   void getKnightMove(int i, int j, std::vector<Move*> &allMoves);
   void getRookMove(int i, int j, std::vector<Move*> &allMoves);
