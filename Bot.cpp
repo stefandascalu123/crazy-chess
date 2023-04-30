@@ -71,6 +71,8 @@ Bot::Bot() { /* Initialize custom fields here */
 
 int last_i, last_j;
 
+std::vector<int> tookPieces(6, 0);
+
 void Bot::recordMove(Move* move, PlaySide sideToMove) {
     /* You might find it useful to also separately
      * record last move in another custom field */
@@ -207,20 +209,7 @@ bool Bot::moveIsLegal(Move *move) {
 
     chessBoardCopy[destination_y][destination_x] = chessBoardCopy[source_y][source_x];
     chessBoardCopy[source_y][source_x] = Pis();
-    if(chessBoardCopy[destination_y][destination_x].type == KING) {
-        if(abs(destination_x - source_x) == 2) {
-          chessBoardCopy[destination_y][destination_x].hasMoved = true;
-          if(destination_x == 2) {
-            chessBoardCopy[destination_y][3] = chessBoardCopy[destination_y][0];
-            chessBoardCopy[destination_y][0] = Pis();
-            chessBoardCopy[destination_y][3].hasMoved = true;
-          } else {
-            chessBoardCopy[destination_y][5] = chessBoardCopy[destination_y][7];
-            chessBoardCopy[destination_y][7] = Pis();
-            chessBoardCopy[destination_y][5].hasMoved = true;
-          }
-        }
-      }
+
     } else if(move->source && move->getReplacement()) {
       int source_x, source_y;
       int destination_x, destination_y;
@@ -648,6 +637,45 @@ void Bot::getKingMove(int i, int j, std::vector<Move*> &allMoves) {
   }
 }
 
+void Bot::getDropIn(std::vector<Move*> &allMoves) {
+  for(int i = 0; i < boardSize; i++) {
+    for(int j = 0; j < boardSize; j++) {
+      if(chessBoard[i][j].side == NONE) {
+        if(i == 0 || i == 7) {
+          if(tookPieces[ROOK] != 0) {
+            allMoves.push_back(Move::dropIn( std::string(1, 'a' + j) + std::to_string(boardSize - i), ROOK));
+          }
+          if(tookPieces[BISHOP] != 0) {
+            allMoves.push_back(Move::dropIn( std::string(1, 'a' + j) + std::to_string(boardSize - i), BISHOP));
+          }
+          if(tookPieces[KNIGHT] != 0) {
+            allMoves.push_back(Move::dropIn( std::string(1, 'a' + j) + std::to_string(boardSize - i), KNIGHT));
+          }
+          if(tookPieces[QUEEN] != 0) {
+            allMoves.push_back(Move::dropIn( std::string(1, 'a' + j) + std::to_string(boardSize - i), QUEEN));
+          }
+        } else {
+          if(tookPieces[PAWN] != 0) {
+            allMoves.push_back(Move::dropIn( std::string(1, 'a' + j) + std::to_string(boardSize - i), PAWN));
+          }
+          if(tookPieces[ROOK] != 0) {
+            allMoves.push_back(Move::dropIn( std::string(1, 'a' + j) + std::to_string(boardSize - i), ROOK));
+          }
+          if(tookPieces[BISHOP] != 0) {
+            allMoves.push_back(Move::dropIn( std::string(1, 'a' + j) + std::to_string(boardSize - i), BISHOP));
+          }
+          if(tookPieces[KNIGHT] != 0) {
+            allMoves.push_back(Move::dropIn( std::string(1, 'a' + j) + std::to_string(boardSize - i), KNIGHT));
+          }
+          if(tookPieces[QUEEN] != 0) {
+            allMoves.push_back(Move::dropIn( std::string(1, 'a' + j) + std::to_string(boardSize - i), QUEEN));
+          }
+        }
+      }
+    }
+  }
+}
+
 Move* Bot::calculateNextMove() {
   /* Play move for the side the engine is playing (Hint: getEngineSide())
    * Make sure to record your move in custom structures before returning.
@@ -680,8 +708,18 @@ Move* Bot::calculateNextMove() {
     }
   }
   getCastleMove(allMoves);
+  getDropIn(allMoves);
   if(allMoves.size()!= 0) {
-    return allMoves[rand() % allMoves.size()];
+    Move* bestMove = allMoves[rand() % allMoves.size()];
+    int destination_x = bestMove->getDestination().value().at(0) - 'a';
+    int destination_y = boardSize - (bestMove->getDestination().value().at(1) - '0');
+    if(chessBoard[destination_y][destination_x].side != getEngineSide() && chessBoard[destination_y][destination_x].side != NONE) {
+      tookPieces[chessBoard[destination_y][destination_x].origin]++;
+    }
+    if(bestMove->isDropIn()) {
+      tookPieces[bestMove->getReplacement().value()]--;
+    }
+    return bestMove;
   }
   return Move::resign();
 }
