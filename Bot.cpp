@@ -73,6 +73,8 @@ int last_i, last_j;
 
 std::vector<int> tookPieces(6, 0);
 
+int moveCount = 1;
+
 void Bot::recordMove(Move* move, PlaySide sideToMove) {
     /* You might find it useful to also separately
      * record last move in another custom field */
@@ -130,6 +132,11 @@ void Bot::recordMove(Move* move, PlaySide sideToMove) {
           }
         }
       }
+
+      if(chessBoard[destination_y][destination_x].type == PAWN) {
+        moveCount = 0;
+      }
+
     } else if(move->source && move->getReplacement()) {
       int source_x, source_y;
       int destination_x, destination_y;
@@ -154,6 +161,7 @@ void Bot::recordMove(Move* move, PlaySide sideToMove) {
       chessBoard[destination_y][destination_x] = Pis(replacement, sideToMove);
     }
 
+    moveCount++;
     std::ofstream fout("out.txt");
 
     for(int i = 0 ; i < boardSize; i ++){
@@ -720,6 +728,11 @@ Move* Bot::calculateNextMove() {
       tookPieces[bestMove->getReplacement().value()]--;
     }
     return bestMove;
+  }
+  if(isInCheck) {
+    // send CheckMate
+  } else {
+    // send Draw
   }
   return Move::resign();
 }
