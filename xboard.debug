@@ -10,251 +10,349 @@ recognized 'normal' (-1) as variant normal
 GameEnds(0, (null), 2)
 shuffleOpenings = 0
 StartChildProcess (dir=".") make run
-271 >first : xboard
+102 >first : xboard
 protover 2
-313 <first : ./Main
-331 <first : 
-332 <first : feature done=0 sigint=0 sigterm=0 san=0 reuse=0 usermove=1 analyze=0 ping=0 setboard=0 level=0 variants="crazyhouse" name="NuPuneBotul" myname="NuPuneBotul" done=1
-332 >first : accepted done
-333 >first : accepted sigint
-334 >first : accepted sigterm
-335 >first : accepted san
-336 >first : accepted reuse
-337 >first : accepted usermove
-337 >first : accepted analyze
-338 >first : accepted ping
-338 >first : accepted setboard
-339 >first : accepted level
-339 >first : accepted variants
-340 >first : accepted name
-340 >first : accepted myname
-340 >first : accepted done
+110 <first : ./Main
+120 <first : 
+121 <first : feature done=0 sigint=0 sigterm=0 san=0 reuse=0 usermove=1 analyze=0 ping=0 setboard=0 level=0 variants="crazyhouse" name="NuPuneBotul" myname="NuPuneBotul" done=1
+121 >first : accepted done
+121 >first : accepted sigint
+121 >first : accepted sigterm
+121 >first : accepted san
+122 >first : accepted reuse
+122 >first : accepted usermove
+122 >first : accepted analyze
+122 >first : accepted ping
+122 >first : accepted setboard
+122 >first : accepted level
+122 >first : accepted variants
+122 >first : accepted name
+123 >first : accepted myname
+123 >first : accepted done
 recognized 'crazyhouse' (-1) as variant crazyhouse
 Reset(1, 0) from gameMode 0
 recognized 'crazyhouse' (-1) as variant crazyhouse
 GameEnds(0, (null), 2)
-344 >first : quit
+126 >first : quit
 shuffleOpenings = 0
 StartChildProcess (dir=".") make run
-416 >first : xboard
+157 >first : xboard
 protover 2
-418 >first : new
+157 >first : new
 random
-419 >first : variant crazyhouse
-420 >first : level 40 5 0
-421 >first : post
-421 >first : hard
-435 <first : ./Main
-445 <first : 
-446 <first : feature done=0 sigint=0 sigterm=0 san=0 reuse=0 usermove=1 analyze=0 ping=0 setboard=0 level=0 variants="crazyhouse" name="NuPuneBotul" myname="NuPuneBotul" done=1
-447 >first : accepted done
-451 >first : accepted sigint
-452 >first : accepted sigterm
-452 >first : accepted san
-453 >first : accepted reuse
-453 >first : accepted usermove
-454 >first : accepted analyze
-454 >first : accepted ping
-455 >first : accepted setboard
-455 >first : accepted level
-456 >first : accepted variants
-456 >first : accepted name
-457 >first : accepted myname
-457 >first : accepted done
+158 >first : variant crazyhouse
+158 >first : level 40 5 0
+158 >first : post
+158 >first : hard
+165 <first : ./Main
+174 <first : 
+175 <first : feature done=0 sigint=0 sigterm=0 san=0 reuse=0 usermove=1 analyze=0 ping=0 setboard=0 level=0 variants="crazyhouse" name="NuPuneBotul" myname="NuPuneBotul" done=1
+175 >first : accepted done
+175 >first : accepted sigint
+175 >first : accepted sigterm
+175 >first : accepted san
+175 >first : accepted reuse
+176 >first : accepted usermove
+176 >first : accepted analyze
+176 >first : accepted ping
+176 >first : accepted setboard
+176 >first : accepted level
+176 >first : accepted variants
+176 >first : accepted name
+176 >first : accepted myname
+177 >first : accepted done
 nps: w=-1, b=-1
-2837 >first : name stefandascalu123
+7477 >first : name andrei_serban
 nps: w=-1, b=-1
-2839 >first : time 30000
-2840 >first : otim 30000
+7478 >first : time 30000
+7478 >first : otim 30000
 book hit = (NULL)
-2841 >first : usermove 2841 >first : b2b4
-2869 <first : move g8h6
-4327 >first : time 29996
-4328 >first : otim 29854
+7478 >first : usermove 7479 >first : a2a3
+7553 <first : move g8h6
+9673 >first : time 29992
+9674 >first : otim 29788
 book hit = (NULL)
-4330 >first : usermove 4331 >first : c2c4
-4354 <first : move b7b5
-5658 >first : time 29994
-5659 >first : otim 29723
+9674 >first : usermove 9674 >first : b2b4
+9748 <first : move b7b5
+12756 >first : time 29984
+12757 >first : otim 29487
 book hit = (NULL)
-5660 >first : usermove 5661 >first : d2d4
-5678 <first : move d7d6
-6993 >first : time 29992
-6994 >first : otim 29592
+12757 >first : usermove 12757 >first : a3a4
+12831 <first : move d7d6
+15240 >first : time 29977
+15240 >first : otim 29246
 book hit = (NULL)
-6995 >first : usermove 6996 >first : e2e4
-7020 <first : move f7f6
-8281 >first : time 29989
-8282 >first : otim 29466
+15241 >first : usermove 15241 >first : a4b5
+15317 <first : move h6f5
+17633 >first : time 29969
+17634 >first : otim 29014
 book hit = (NULL)
-8283 >first : usermove 8284 >first : f2f4
-8304 <first : move c7c5
-9740 >first : time 29986
-9742 >first : otim 29323
+17634 >first : usermove 17634 >first : e2e4
+17710 <first : move e7e6
+18803 >first : time 29961
+18804 >first : otim 28905
 book hit = (NULL)
-9744 >first : usermove 9745 >first : g2g4
-9767 <first : move e7e6
-Reset(1, 1) from gameMode 2
-recognized 'crazyhouse' (-1) as variant crazyhouse
-GameEnds(0, (null), 2)
-12298 >first : quit
-shuffleOpenings = 0
-StartChildProcess (dir=".") make run
-12307 >first : xboard
-protover 2
-12308 >first : new
-random
-12309 >first : variant crazyhouse
-12309 >first : level 40 5 0
-12310 >first : post
-12310 >first : hard
-12329 <first : ./Main
-12350 <first : 
-12350 <first : feature done=0 sigint=0 sigterm=0 san=0 reuse=0 usermove=1 analyze=0 ping=0 setboard=0 level=0 variants="crazyhouse" name="NuPuneBotul" myname="NuPuneBotul" done=1
-12351 >first : accepted done
-12351 >first : accepted sigint
-12352 >first : accepted sigterm
-12353 >first : accepted san
-12353 >first : accepted reuse
-12355 >first : accepted usermove
-12355 >first : accepted analyze
-12356 >first : accepted ping
-12356 >first : accepted setboard
-12357 >first : accepted level
-12357 >first : accepted variants
-12358 >first : accepted name
-12358 >first : accepted myname
-12359 >first : accepted done
-nps: w=-1, b=-1
-21744 >first : name stefandascalu123
-nps: w=-1, b=-1
-21746 >first : time 30000
-21747 >first : otim 30000
+18804 >first : usermove 18804 >first : e4f5
+18880 <first : move e6e5
+21214 >first : time 29954
+21214 >first : otim 28672
 book hit = (NULL)
-21749 >first : usermove 21750 >first : e2e4
-21789 <first : move g8h6
-25099 >first : time 29995
-25100 >first : otim 29669
+21215 >first : usermove 21215 >first : d2d4
+21288 <first : move b8a6
+22412 >first : time 29946
+22413 >first : otim 28559
 book hit = (NULL)
-25103 >first : usermove 25104 >first : g1f3
-25158 <first : move b7b5
-27574 >first : time 29989
-27576 >first : otim 29427
+22413 >first : usermove 22413 >first : d4e5
+22489 <first : move f7f6
+23261 >first : time 29938
+23262 >first : otim 28482
 book hit = (NULL)
-27577 >first : usermove 27579 >first : d2d4
-27629 <first : move d7d6
-36712 >first : time 29983
-36713 >first : otim 28519
+23262 >first : usermove 23262 >first : e5d6
+23336 <first : move f8d6
+33778 >first : time 29931
+33778 >first : otim 27438
 book hit = (NULL)
-36715 >first : usermove 36716 >first : f1b5
-36764 <first : move b8c6
-38762 >first : time 29978
-38763 >first : otim 28320
+33778 >first : usermove 33779 >first : g2g4
+33851 <first : move P@a4
+LegalDrop: 66 @ 2,3)
+LegalDrop: 66 @ 2,3)
+35829 >first : time 29923
+35830 >first : otim 27240
 book hit = (NULL)
-38765 >first : usermove 38766 >first : b5c6
-38812 <first : move d8d7
-40980 >first : time 29973
-40982 >first : otim 28103
+35830 >first : usermove 35830 >first : c2c3
+35905 <first : move d6c5
+37986 >first : time 29916
+37986 >first : otim 27032
 book hit = (NULL)
-40984 >first : usermove 40985 >first : c6d7
-41028 <first : move e8d8
-43324 >first : time 29968
-43325 >first : otim 27873
+37987 >first : usermove 37987 >first : b1a3
+38082 <first : move c5f8
+40331 >first : time 29906
+40331 >first : otim 26808
 book hit = (NULL)
-43327 >first : usermove 43328 >first : d7c8
-43380 <first : move e7e5
-45358 >first : time 29962
-45360 >first : otim 27676
+40332 >first : usermove 40332 >first : c1g5
+40430 <first : move e8e7
+41105 >first : time 29896
+41106 >first : otim 26740
 book hit = (NULL)
-45361 >first : usermove 45362 >first : c8b7
-45412 <first : move f7f5
-47122 >first : time 29957
-47123 >first : otim 27505
+41106 >first : usermove 41106 >first : g5f6
+41179 <first : move g7f6
+42637 >first : time 29889
+42637 >first : otim 26594
 book hit = (NULL)
-47125 >first : usermove 47126 >first : b7a8
-47177 <first : move d8d7
-52558 >first : time 29951
-52559 >first : otim 26967
+42638 >first : usermove 42638 >first : g4g5
+42710 <first : move B@d6
+LegalDrop: 68 @ 5,5)
+LegalDrop: 68 @ 5,5)
+43332 >first : time 29881
+43332 >first : otim 26532
 book hit = (NULL)
-52561 >first : usermove 52562 >first : b1c3
-52610 <first : move h8g8
-58486 >first : time 29946
-58487 >first : otim 26379
+43332 >first : usermove 43333 >first : g5f6
+43406 <first : move e7f7
+46170 >first : time 29874
+46171 >first : otim 26256
 book hit = (NULL)
-58489 >first : usermove 58490 >first : a8d5
-58542 <first : move c7c5
-61542 >first : time 29940
-61543 >first : otim 26079
+46171 >first : usermove 46172 >first : b5b6
+46245 <first : move d6h2
+46852 >first : time 29866
+46853 >first : otim 26195
 book hit = (NULL)
-61546 >first : usermove 61547 >first : d5g8
-61600 <first : move d7e7
-70763 >first : time 29934
-70765 >first : otim 25163
+46853 >first : usermove 46853 >first : b6c7
+46926 <first : move P@h4
+LegalDrop: 66 @ 9,3)
+LegalDrop: 66 @ 9,3)
+51953 >first : time 29859
+51953 >first : otim 25693
 book hit = (NULL)
-70767 >first : usermove 70768 >first : d4e5
-70817 <first : move g7g6
-75485 >first : time 29929
-75486 >first : otim 24696
+51954 >first : usermove 51954 >first : g1h3
+52051 <first : move f7g8
+53184 >first : time 29849
+53184 >first : otim 25579
 book hit = (NULL)
-75488 >first : usermove 75489 >first : e4f5
-75537 <first : move e7e8
-78108 >first : time 29924
-78109 >first : otim 24439
+53185 >first : usermove 53185 >first : h3g5
+53281 <first : move f8g7
+54426 >first : time 29839
+54426 >first : otim 25465
 book hit = (NULL)
-78111 >first : usermove 78112 >first : f5g6
-78159 <first : move d6d5
-80620 >first : time 29918
-80621 >first : otim 24193
+54426 >first : usermove 54427 >first : g5h7
+54523 <first : move c8d7
+57415 >first : time 29830
+57415 >first : otim 25176
 book hit = (NULL)
-80624 >first : usermove 80625 >first : g6h7
-80676 <first : move e8d8
-84002 >first : time 29913
-84003 >first : otim 23861
+57415 >first : usermove 57416 >first : h7f8
+57512 <first : move d8c7
+60341 >first : time 29820
+60342 >first : otim 24893
 book hit = (NULL)
-84005 >first : usermove 84006 >first : h7h8q
-84054 <first : move h6f5
-87401 >first : time 29907
-87402 >first : otim 23526
+60342 >first : usermove 60342 >first : e1e2
+60416 <first : move P@b7
+LegalDrop: 66 @ 3,6)
+LegalDrop: 66 @ 3,6)
+61609 >first : time 29812
+61610 >first : otim 24774
 book hit = (NULL)
-87404 >first : usermove 87405 >first : h8f6
-87459 <first : move d8c8
-90369 >first : time 29901
-90370 >first : otim 23235
+61610 >first : usermove 61610 >first : d1d4
+61704 <first : move c7e5
+62568 >first : time 29803
+62568 >first : otim 24687
 book hit = (NULL)
-90372 >first : usermove 90373 >first : f6f8
-90417 <first : move c8c7
-95724 >first : time 29896
-95725 >first : otim 22705
+62569 >first : usermove 62569 >first : d4e5
+62644 <first : move a8d8
+72835 >first : time 29795
+72836 >first : otim 23668
 book hit = (NULL)
-95728 >first : usermove 95729 >first : g8d5
-95781 <first : move f5g3
-100807 >first : time 29891
-100808 >first : otim 22202
+72836 >first : usermove 72836 >first : e5d6
+72912 <first : move a6b8
+74021 >first : time 29787
+74021 >first : otim 23557
 book hit = (NULL)
-100810 >first : usermove 100811 >first : f8e7
-100855 <first : move c7b6
-104194 >first : time 29886
-104195 >first : otim 21868
+74021 >first : usermove 74022 >first : d6d7
+74095 <first : move a7a5
+75460 >first : time 29780
+75461 >first : otim 23421
 book hit = (NULL)
-104198 >first : usermove 104199 >first : e7d8
-104251 <first : move b6a6
-109277 >first : time 29880
-109278 >first : otim 21366
+75461 >first : usermove 75461 >first : d7d8
+75536 <first : move g8f7
+78108 >first : time 29772
+78108 >first : otim 23164
 book hit = (NULL)
-109280 >first : usermove 109281 >first : d8d6
-109329 <first : move a6a5
-112524 >first : time 29875
-112525 >first : otim 21047
+78109 >first : usermove 78109 >first : d8d5
+78205 <first : move f7f8
+80075 >first : time 29763
+80075 >first : otim 22977
 book hit = (NULL)
-112527 >first : usermove 112529 >first : d6c7
-112581 <first : move a5b4
-116461 >first : time 29869
-116462 >first : otim 20659
-book hit = (NULL)
-116464 >first : usermove 116465 >first : c7b7
-116519 <first : move b4a5
-118745 >first : usermove 118747 >first : b7b5
+80075 >first : usermove 80076 >first : d5d6
+80151 <first : move N@g4
+LegalDrop: 67 @ 8,3)
+LegalDrop: 67 @ 8,3)
+91899 >first : usermove 91899 >first : d6f8
 GameEnds(26, Xboard adjudication: Checkmate, 4)
-118749 >first : result 1-0 {Xboard adjudication: Checkmate}
-118750 >first : quit
+91900 >first : result 1-0 {Xboard adjudication: Checkmate}
+91900 >first : quit
+PauseEvent(): pausing 0
+BackwardInner(60), current 61, forward 61
+BackwardInner(59), current 60, forward 61
+BackwardInner(58), current 59, forward 61
+BackwardInner(57), current 58, forward 61
+BackwardInner(56), current 57, forward 61
+BackwardInner(55), current 56, forward 61
+BackwardInner(54), current 55, forward 61
+BackwardInner(53), current 54, forward 61
+BackwardInner(52), current 53, forward 61
+BackwardInner(51), current 52, forward 61
+BackwardInner(50), current 51, forward 61
+BackwardInner(49), current 50, forward 61
+BackwardInner(48), current 49, forward 61
+BackwardInner(47), current 48, forward 61
+BackwardInner(46), current 47, forward 61
+BackwardInner(45), current 46, forward 61
+BackwardInner(44), current 45, forward 61
+BackwardInner(43), current 44, forward 61
+BackwardInner(42), current 43, forward 61
+BackwardInner(41), current 42, forward 61
+BackwardInner(40), current 41, forward 61
+BackwardInner(39), current 40, forward 61
+BackwardInner(38), current 39, forward 61
+BackwardInner(37), current 38, forward 61
+BackwardInner(36), current 37, forward 61
+BackwardInner(35), current 36, forward 61
+BackwardInner(34), current 35, forward 61
+BackwardInner(33), current 34, forward 61
+BackwardInner(32), current 33, forward 61
+BackwardInner(31), current 32, forward 61
+BackwardInner(30), current 31, forward 61
+BackwardInner(29), current 30, forward 61
+BackwardInner(28), current 29, forward 61
+BackwardInner(27), current 28, forward 61
+BackwardInner(26), current 27, forward 61
+BackwardInner(25), current 26, forward 61
+BackwardInner(24), current 25, forward 61
+BackwardInner(23), current 24, forward 61
+BackwardInner(22), current 23, forward 61
+BackwardInner(21), current 22, forward 61
+BackwardInner(20), current 21, forward 61
+BackwardInner(19), current 20, forward 61
+BackwardInner(18), current 19, forward 61
+BackwardInner(17), current 18, forward 61
+BackwardInner(16), current 17, forward 61
+BackwardInner(15), current 16, forward 61
+BackwardInner(14), current 15, forward 61
+BackwardInner(13), current 14, forward 61
+BackwardInner(12), current 13, forward 61
+BackwardInner(11), current 12, forward 61
+BackwardInner(10), current 11, forward 61
+BackwardInner(9), current 10, forward 61
+BackwardInner(8), current 9, forward 61
+BackwardInner(7), current 8, forward 61
+BackwardInner(6), current 7, forward 61
+BackwardInner(5), current 6, forward 61
+BackwardInner(4), current 5, forward 61
+BackwardInner(3), current 4, forward 61
+BackwardInner(2), current 3, forward 61
+BackwardInner(1), current 2, forward 61
+BackwardInner(0), current 1, forward 61
+ForwardInner(61), current 0, forward 61
+BackwardInner(0), current 61, forward 61
+ForwardInner(1), current 0, forward 61
+ForwardInner(2), current 1, forward 61
+ForwardInner(3), current 2, forward 61
+ForwardInner(4), current 3, forward 61
+ForwardInner(5), current 4, forward 61
+ForwardInner(6), current 5, forward 61
+ForwardInner(7), current 6, forward 61
+ForwardInner(8), current 7, forward 61
+ForwardInner(9), current 8, forward 61
+ForwardInner(10), current 9, forward 61
+ForwardInner(11), current 10, forward 61
+ForwardInner(12), current 11, forward 61
+ForwardInner(13), current 12, forward 61
+ForwardInner(14), current 13, forward 61
+ForwardInner(15), current 14, forward 61
+ForwardInner(16), current 15, forward 61
+ForwardInner(17), current 16, forward 61
+ForwardInner(18), current 17, forward 61
+ForwardInner(19), current 18, forward 61
+ForwardInner(20), current 19, forward 61
+ForwardInner(21), current 20, forward 61
+ForwardInner(22), current 21, forward 61
+ForwardInner(23), current 22, forward 61
+ForwardInner(24), current 23, forward 61
+ForwardInner(25), current 24, forward 61
+ForwardInner(26), current 25, forward 61
+ForwardInner(27), current 26, forward 61
+ForwardInner(28), current 27, forward 61
+ForwardInner(29), current 28, forward 61
+ForwardInner(30), current 29, forward 61
+ForwardInner(31), current 30, forward 61
+ForwardInner(32), current 31, forward 61
+ForwardInner(33), current 32, forward 61
+ForwardInner(34), current 33, forward 61
+ForwardInner(35), current 34, forward 61
+ForwardInner(36), current 35, forward 61
+ForwardInner(37), current 36, forward 61
+ForwardInner(38), current 37, forward 61
+ForwardInner(39), current 38, forward 61
+ForwardInner(40), current 39, forward 61
+ForwardInner(41), current 40, forward 61
+ForwardInner(42), current 41, forward 61
+ForwardInner(43), current 42, forward 61
+ForwardInner(44), current 43, forward 61
+ForwardInner(45), current 44, forward 61
+ForwardInner(46), current 45, forward 61
+ForwardInner(47), current 46, forward 61
+ForwardInner(48), current 47, forward 61
+ForwardInner(49), current 48, forward 61
+ForwardInner(50), current 49, forward 61
+ForwardInner(51), current 50, forward 61
+ForwardInner(52), current 51, forward 61
+ForwardInner(53), current 52, forward 61
+ForwardInner(54), current 53, forward 61
+ForwardInner(55), current 54, forward 61
+ForwardInner(56), current 55, forward 61
+ForwardInner(57), current 56, forward 61
+ForwardInner(58), current 57, forward 61
+ForwardInner(59), current 58, forward 61
+ForwardInner(60), current 59, forward 61
+ForwardInner(61), current 60, forward 61
+ForwardInner(62), current 61, forward 61
+ForwardInner(62), current 61, forward 61
 GameEnds(26, Xboard adjudication: Checkmate, 2)

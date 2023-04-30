@@ -33,12 +33,22 @@ Metoda `recordMove()` parsează mișcarea primită de la xboard în coordonate a
 
 Metoda `isCheck()` primește ca parametru reprezentarea internă a tablei de șah (deoarece uneori este nevoie de o copie a acesteia pentru a verifica mișcări valide, altfel nu era nevoie de parametru și se putea folosi doar câmpul clasei) și iterează prin ea până găsește poziția pe care se află regele. După aceea, verifică fiecare linie, coloană și diagonală care are regele în mijloc pentru piese inamice ce pot amenința regele. Dacă se găsește o piesă a botului sau o piesă a inamicului, dar care nu poate amenința pe direcția respectivă, se verifică următoarea direcție, altfel dacă se găsește o piesă a inamicului ce poate amenința pe direcția aceea înainte de oricare altă piesă, se returnează true. Întâi se verifică dacă este amenințat pe direcția verticală și orizontală, după aceea se verifică diagonalele, iar după aceea pionii sunt tratați separat, în funcție de culoare, deoarece reprezentarea internă a tablei are întotdeauna jucătorul negru în partea superioară și la final sunt tratate cele 8 poziții ale cailor.
 #### Alegerea următoarei mișcări
-Ideea generală a alegerii mișcării pe care să o trimită botul la orice mișcare trimisă de oponent constă în construirea unui vector `allMoves` unde sunt trecute toate mișcările valide pe care le poate face botul conform reprezentării în `chessBoard` la momentul respectiv. Acest vector se construiește în metoda `calculateNextMove`, care la final returnează, folosind funcția `rand()`, un element aleator din vector ca mișcare de trimis către xboard. Pentru a aduna în `allMoves` toate mișcările valide, metoda apelează, pentru fiecare tip de piesă în parte, metode de forma `get*Move`, unde * = {Pawn, Knight, Rook, Bishop, Queen, King, Castle, DropIn}.
+Ideea generală a alegerii mișcării pe care să o trimită botul la orice mișcare trimisă de oponent constă în construirea unui vector `allMoves` unde sunt trecute toate mișcările valide pe care le poate face botul conform reprezentării în `chessBoard` la momentul respectiv. Acest vector se construiește în metoda `calculateNextMove`, care la final returnează, folosind funcția `rand()`, un element aleator din vector ca mișcare de trimis către xboard. Pentru a aduna în `allMoves` toate mișcările valide, metoda apelează, pentru fiecare tip de piesă în parte, metode de forma `getXMove()`, unde X = {Pawn, Knight, Rook, Bishop, Queen, King, Castle, DropIn}. Pentru a verifica validitatea mișcărilor, aceste metode folosesc metoda `moveIsLegal()`, care creează o copie a tablei curente de șah, pe care testează mișcarea și verifică dacă rezultă în șah pentru bot. Dacă nu rezultă în șah, mișcarea e validă.
+
+Pentru a itera prin toate posibilele mișcări pe care le poate face o piesă, metodele pentru tură, regină și nebun funcționează similar, în sensul că iterează pe direcțiile lor de mișcare și adaugă toate mișcările care nu rezultă în șah. Spre exemplu, la `getRookMove()`, se verifică toate pozițiile de deasupra turei, până se găsește o altă piesă a botului, caz în care se rupe repetiția și se trece la următoarea direcție de verificat, sau o piesă a inamicului, caz în care se verifică dacă e validă captura acelei piese, iar după se rupe repetiția. Pentru toate mișcările în care poziția destinație e liberă, se verifică dacă e mișcare validă și se iterează mai departe. Verificarea se produce analog și pentru celelalte 3 direcții de mișcare a turei. Analog, pentru `getBishopMove()` și `getQueenMove()`.
+
+La `getPawnMove()` și `getKnightMove()`, fiind vorba de un număr limitat de mișcări posibile pentru fiecare piesă în parte, acestea se verifică manual dacă sunt valide sau nu. De menționat însă că metoda `getPawnMove()` este mai complexă din cauza necesității de a verifica mișcările en passant.
+
+Pentru `getCastlingMove()`, se verifică manual, folosind flag-uri logice, [Cerințele de formare a rocadei](https://en.wikipedia.org/wiki/Castling#Requirements) și, în cazul în care acestea sunt îndeplinite se adaugă la `allMoves` rocada mică, respectiv rocada mare.
+
+În final, pentru `getDropInMove()`, se verifică validitatea mișcărilor specifice variantei de șah CrazyHouse, anume dropin-urile. Aici, se iterează prin toate pozițiile din reprezentarea internă a tablei, se verifică dacă sunt libere și dacă respectă regulile de dropin, iar apoi se adaugă în `allMoves`, fară a se mai verifica dacă mișcarea e validă sau nu, pentru că nu ai cum sa adaugi o piesă pe tablă care sa trimită botul în șah. Se folosește un vector de piese capturate, `tookPieces`, pentru care poziția corespunde numerelor din enumeratia `Piece`, astfel încât funcționează ca un vector de frecvență. Acest vector se actualizează în funcție de mișcarea aleatoare aleasă in `calculateNextMove()`, unde dacă se alege un dropin de o anumită piesă, vectorul se decrementează pe poziția piesei, iar dacă mișcarea aleasă capturează o piesă a inamicului, vectorul se incrementează pe poziția acelei piese.
 ### Etapa 2
 TODO
 ## Abordare algoritmică
 ### Etapa 1
-TODO
+Metodele algoritmice folosite pentru a crea un bot care doar știe să răspundă cu o mișcare aleatoare, dar validă, nu sunt sofisticate, folosind brute force-ul pentru a itera prin toate mișcările valide și asemănându-se cu pașii dintr-un algoritm de backtracking.
+
+Complexitățile temporale și spațiale se pot reduce la complexități constante, din simplul fapt că numărul de mișcări valide la fiecare pas este relativ mic, iar bufferele auxiliare folosite sunt, din nou, relativ mici.
 ### Etapa 2
 TODO
 ## Responsabilitățile membrilor
@@ -48,4 +58,8 @@ Gândirea generală a soluției a fost un efort comun, dar fiecare membru al ech
 * Diana - testare
 * Andrei - scriere documentație
 ## Surse
-TODO
+[Documentația Xboard](https://www.gnu.org/software/xboard/)
+
+[Regulile pentru en passant](https://en.wikipedia.org/wiki/En_passant)
+
+[Cerințele pentru formarea rocadei](https://en.wikipedia.org/wiki/Castling#Requirements)
