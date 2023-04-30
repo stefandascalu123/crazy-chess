@@ -1,5 +1,5 @@
 # Proiect PA 2023 - CrazyHouse Chess Bot
-__Nume echipa: Daudecrapastiva__
+__Nume echipă: Daudecrapastiva__
 
 __Membri:__
 * Șerban Andrei-Teodor, 324CC
