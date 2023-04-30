@@ -5,3 +5,4 @@ __Membri:__
 * Șerban Andrei-Teodor, 324CC
 * Pințoiu Alina-Diana, 324CC
 * Dascălu Ștefan-Teodor, 324CC
+* Petracovici Tudor, 324CC
