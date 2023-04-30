@@ -163,10 +163,22 @@ class EngineComponents {
     PLAYING = 2,
     FORCE_MODE = 3
   };
+
+  bool first = true;
+
   void emitMove(Move* move) {
     if (move->isDropIn() || move->isNormal() || move->isPromotion())
       std::cout << "move ";
+    
+    if(first && getEngineSide() == WHITE) 
+      move = bot.value()->calculateNextMove();
+   
     std::cout << serializeMove(move) << "\n";
+
+    if(first && getEngineSide() == WHITE) {
+        bot.value()->recordMove(move, getEngineSide());
+        first = false;
+      }
   }
 
  public:
@@ -230,9 +242,6 @@ class EngineComponents {
     delete move;
     toggleSideToMove();
   }
-
-  bool first = true;
-
 
   void processIncomingMove(Move *move) {
     if (state.value() == FORCE_MODE || state.value() == RECV_NEW) {

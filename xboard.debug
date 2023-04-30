@@ -10,522 +10,230 @@ recognized 'normal' (-1) as variant normal
 GameEnds(0, (null), 2)
 shuffleOpenings = 0
 StartChildProcess (dir=".") make run
-299 >first : xboard
+283 >first : xboard
 protover 2
-325 <first : ./Main
-344 <first : 
-345 <first : feature done=0 sigint=0 sigterm=0 san=0 reuse=0 usermove=1 analyze=0 ping=0 setboard=0 level=0 variants="crazyhouse" name="NuPuneBotul" myname="NuPuneBotul" done=1
-345 >first : accepted done
-346 >first : accepted sigint
-347 >first : accepted sigterm
-347 >first : accepted san
-348 >first : accepted reuse
-349 >first : accepted usermove
-350 >first : accepted analyze
-351 >first : accepted ping
-351 >first : accepted setboard
-352 >first : accepted level
-352 >first : accepted variants
-353 >first : accepted name
-353 >first : accepted myname
-354 >first : accepted done
+302 <first : ./Main
+328 <first : 
+329 <first : feature done=0 sigint=0 sigterm=0 san=0 reuse=0 usermove=1 analyze=0 ping=0 setboard=0 level=0 variants="crazyhouse" name="NuPuneBotul" myname="NuPuneBotul" done=1
+330 >first : accepted done
+330 >first : accepted sigint
+331 >first : accepted sigterm
+331 >first : accepted san
+332 >first : accepted reuse
+332 >first : accepted usermove
+333 >first : accepted analyze
+333 >first : accepted ping
+333 >first : accepted setboard
+334 >first : accepted level
+334 >first : accepted variants
+334 >first : accepted name
+335 >first : accepted myname
+335 >first : accepted done
 recognized 'crazyhouse' (-1) as variant crazyhouse
 Reset(1, 0) from gameMode 0
 recognized 'crazyhouse' (-1) as variant crazyhouse
 GameEnds(0, (null), 2)
-365 >first : quit
+338 >first : quit
 shuffleOpenings = 0
 StartChildProcess (dir=".") make run
-449 >first : xboard
+385 >first : xboard
 protover 2
-450 >first : new
+386 >first : new
 random
-451 >first : variant crazyhouse
-452 >first : level 40 5 0
-453 >first : post
-454 >first : hard
-501 <first : ./Main
-535 <first : 
-536 <first : feature done=0 sigint=0 sigterm=0 san=0 reuse=0 usermove=1 analyze=0 ping=0 setboard=0 level=0 variants="crazyhouse" name="NuPuneBotul" myname="NuPuneBotul" done=1
-536 >first : accepted done
-537 >first : accepted sigint
-537 >first : accepted sigterm
-538 >first : accepted san
-538 >first : accepted reuse
-539 >first : accepted usermove
-540 >first : accepted analyze
-540 >first : accepted ping
-541 >first : accepted setboard
-542 >first : accepted level
-542 >first : accepted variants
-543 >first : accepted name
-545 >first : accepted myname
-546 >first : accepted done
-3390 >first : force
-StartChildProcess (dir=".") make run
-3392 >second: xboard
-protover 2
-3414 <second: ./Main
-3419 <second: 
-3420 <second: feature done=0 sigint=0 sigterm=0 san=0 reuse=0 usermove=1 analyze=0 ping=0 setboard=0 level=0 variants="crazyhouse" name="NuPuneBotul" myname="NuPuneBotul" done=1
-3420 >second: accepted done
-3421 >second: accepted sigint
-3421 >second: accepted sigterm
-3422 >second: accepted san
-3422 >second: accepted reuse
-3423 >second: accepted usermove
-3423 >second: accepted analyze
-3424 >second: accepted ping
-3424 >second: accepted setboard
-3425 >second: accepted level
-3425 >second: accepted variants
-3426 >second: accepted name
-3426 >second: accepted myname
-3426 >second: accepted done
-3428 >second: new
-random
-3429 >second: variant crazyhouse
-3429 >second: level 40 5 0
-3430 >second: post
-3430 >second: hard
-3431 >second: force
-New game (0): NuPuneBotul-NuPuneBotul (w)
-3443 >first : computer
-3443 >first : name NuPuneBotul
-3444 >second: computer
-3444 >second: name NuPuneBotul
-3445 >first : black
-3446 >first : time 30000
-3447 >first : otim 30000
-3448 >first : white
+387 >first : variant crazyhouse
+387 >first : level 40 5 0
+388 >first : post
+389 >first : hard
+420 <first : ./Main
+467 <first : 
+468 <first : feature done=0 sigint=0 sigterm=0 san=0 reuse=0 usermove=1 analyze=0 ping=0 setboard=0 level=0 variants="crazyhouse" name="NuPuneBotul" myname="NuPuneBotul" done=1
+468 >first : accepted done
+472 >first : accepted sigint
+472 >first : accepted sigterm
+473 >first : accepted san
+474 >first : accepted reuse
+474 >first : accepted usermove
+475 >first : accepted analyze
+475 >first : accepted ping
+476 >first : accepted setboard
+476 >first : accepted level
+477 >first : accepted variants
+478 >first : accepted name
+478 >first : accepted myname
+480 >first : accepted done
+2305 >first : name stefandascalu123
+2306 >first : black
+2307 >first : time 30000
+2307 >first : otim 30000
+2311 >first : white
 book hit = (NULL)
-3449 >first : go
+2316 >first : go
 nps: w=-1, b=-1
-3450 <first : move b2b4
-3451 >second: time 30000
-3451 >second: otim 29999
+2325 <first : move d2d3
+8531 >first : time 29999
+8532 >first : otim 29379
 book hit = (NULL)
-3452 >second: usermove 3452 >second: b2b4
-3455 >second: black
-3456 >second: go
-3464 <second: move g8h6
-3465 >first : time 29999
-3468 >first : otim 29998
-book hit = (NULL)
-3474 >first : usermove 3475 >first : g8h6
-3501 <first : move d2d3
-3502 >second: time 29998
-3505 >second: otim 29996
-book hit = (NULL)
-3512 >second: usermove 3513 >second: d2d3
-3550 <second: move b7b6
-3550 >first : time 29996
-3551 >first : otim 29993
-book hit = (NULL)
-3552 >first : usermove 3556 >first : b7b6
-3585 <first : move c1d2
-3589 >second: time 29993
-3590 >second: otim 29992
-book hit = (NULL)
-3593 >second: usermove 3593 >second: c1d2
-3624 <second: move c7c5
-3625 >first : time 29992
-3626 >first : otim 29990
-book hit = (NULL)
-3627 >first : usermove 3628 >first : c7c5
-3660 <first : move g2g3
-3660 >second: time 29990
-3661 >second: otim 29988
-book hit = (NULL)
-3661 >second: usermove 3662 >second: g2g3
-3695 <second: move f7f6
-3695 >first : time 29988
-3696 >first : otim 29986
-book hit = (NULL)
-3696 >first : usermove 3697 >first : f7f6
-3731 <first : move e2e4
-3731 >second: time 29986
-3732 >second: otim 29985
-book hit = (NULL)
-3733 >second: usermove 3733 >second: e2e4
-3763 <second: move a7a5
-3763 >first : time 29985
-3764 >first : otim 29983
-book hit = (NULL)
-3765 >first : usermove 3765 >first : a7a5
-3796 <first : move d2e3
-3797 >second: time 29983
-3798 >second: otim 29981
-book hit = (NULL)
-3799 >second: usermove 3799 >second: d2e3
-3834 <second: move a8a7
-3835 >first : time 29981
-3835 >first : otim 29979
-book hit = (NULL)
-3839 >first : usermove 3841 >first : a8a7
-3867 <first : move e1d2
-3868 >second: time 29979
-3868 >second: otim 29978
-book hit = (NULL)
-3871 >second: usermove 3873 >second: e1d2
-3902 <second: move d7d6
-3905 >first : time 29978
-3907 >first : otim 29975
-book hit = (NULL)
-3908 >first : usermove 3909 >first : d7d6
-3935 <first : move c2c3
-3938 >second: time 29975
-3941 >second: otim 29975
-book hit = (NULL)
-3942 >second: usermove 3943 >second: c2c3
-3976 <second: move c8g4
-3977 >first : time 29975
-3977 >first : otim 29972
-book hit = (NULL)
-3978 >first : usermove 3979 >first : c8g4
-4013 <first : move d1e1
-4013 >second: time 29972
-4014 >second: otim 29971
-book hit = (NULL)
-4015 >second: usermove 4015 >second: d1e1
-4048 <second: move g4e6
-4048 >first : time 29971
-4049 >first : otim 29968
-book hit = (NULL)
-4050 >first : usermove 4050 >first : g4e6
-4085 <first : move h2h4
-4085 >second: time 29968
-4088 >second: otim 29967
-book hit = (NULL)
-4090 >second: usermove 4091 >second: h2h4
-4125 <second: move a5a4
-4125 >first : time 29967
-4126 >first : otim 29964
-book hit = (NULL)
-4127 >first : usermove 4127 >first : a5a4
-4159 <first : move f1e2
-4159 >second: time 29964
-4160 >second: otim 29964
-book hit = (NULL)
-4160 >second: usermove 4161 >second: f1e2
-4191 <second: move b8d7
-4192 >first : time 29964
-4193 >first : otim 29961
-book hit = (NULL)
-4193 >first : usermove 4194 >first : b8d7
-4229 <first : move d2c2
-4230 >second: time 29961
-4230 >second: otim 29960
-book hit = (NULL)
-4231 >second: usermove 4231 >second: d2c2
-4261 <second: move g7g6
-4262 >first : time 29960
-4262 >first : otim 29957
-book hit = (NULL)
-4263 >first : usermove 4263 >first : g7g6
-4294 <first : move e2f3
-4294 >second: time 29957
-4295 >second: otim 29957
-book hit = (NULL)
-4295 >second: usermove 4296 >second: e2f3
-4328 <second: move d6d5
-4329 >first : time 29957
-4329 >first : otim 29954
-book hit = (NULL)
-4330 >first : usermove 4330 >first : d6d5
-4362 <first : move b2b4
-GameEnds(27, Xboard: Forfeit due to invalid move: b2b4 (b2b4 via ^0, ^0) res=24, 4)
-4364 >first : result 0-1 {Xboard: Forfeit due to invalid move: b2b4 (b2b4 via ^0, ^0) res=24}
-4364 >second: result 0-1 {Xboard: Forfeit due to invalid move: b2b4 (b2b4 via ^0, ^0) res=24}
-4365 >first : quit
-4366 >second: quit
-ForwardInner(27), current 26, forward 26
-ForwardInner(27), current 26, forward 26
-ForwardInner(27), current 26, forward 26
-BackwardInner(25), current 26, forward 26
-ForwardInner(26), current 25, forward 26
-BackwardInner(25), current 26, forward 26
-BackwardInner(24), current 25, forward 26
-BackwardInner(23), current 24, forward 26
-ForwardInner(24), current 23, forward 26
-ForwardInner(25), current 24, forward 26
-ForwardInner(26), current 25, forward 26
-ForwardInner(27), current 26, forward 26
-ForwardInner(27), current 26, forward 26
-ForwardInner(27), current 26, forward 26
-BackwardInner(25), current 26, forward 26
-BackwardInner(24), current 25, forward 26
-BackwardInner(23), current 24, forward 26
-BackwardInner(22), current 23, forward 26
-BackwardInner(21), current 22, forward 26
-BackwardInner(20), current 21, forward 26
-BackwardInner(19), current 20, forward 26
-BackwardInner(18), current 19, forward 26
-BackwardInner(17), current 18, forward 26
-BackwardInner(16), current 17, forward 26
-BackwardInner(15), current 16, forward 26
-BackwardInner(14), current 15, forward 26
-BackwardInner(13), current 14, forward 26
-BackwardInner(12), current 13, forward 26
-BackwardInner(11), current 12, forward 26
-BackwardInner(10), current 11, forward 26
-BackwardInner(9), current 10, forward 26
-BackwardInner(8), current 9, forward 26
-BackwardInner(7), current 8, forward 26
-BackwardInner(6), current 7, forward 26
-BackwardInner(5), current 6, forward 26
-BackwardInner(4), current 5, forward 26
-BackwardInner(3), current 4, forward 26
-BackwardInner(2), current 3, forward 26
-BackwardInner(1), current 2, forward 26
-BackwardInner(0), current 1, forward 26
-BackwardInner(-1), current 0, forward 26
-BackwardInner(-1), current 0, forward 26
-ForwardInner(1), current 0, forward 26
-BackwardInner(0), current 1, forward 26
-Reset(1, 1) from gameMode 8
-recognized 'crazyhouse' (-1) as variant crazyhouse
-GameEnds(0, (null), 2)
-shuffleOpenings = 0
+8534 >first : usermove 8534 >first : f7f6
+8552 <first : move c1d2
+14655 >first : force
 StartChildProcess (dir=".") make run
-54972 >first : xboard
+14659 >second: xboard
 protover 2
-54973 >first : new
+14681 <second: ./Main
+14687 <second: 
+14687 <second: feature done=0 sigint=0 sigterm=0 san=0 reuse=0 usermove=1 analyze=0 ping=0 setboard=0 level=0 variants="crazyhouse" name="NuPuneBotul" myname="NuPuneBotul" done=1
+14688 >second: accepted done
+14688 >second: accepted sigint
+14689 >second: accepted sigterm
+14689 >second: accepted san
+14690 >second: accepted reuse
+14690 >second: accepted usermove
+14690 >second: accepted analyze
+14691 >second: accepted ping
+14692 >second: accepted setboard
+14692 >second: accepted level
+14692 >second: accepted variants
+14693 >second: accepted name
+14693 >second: accepted myname
+14694 >second: accepted done
+14696 >second: new
 random
-54975 >first : variant crazyhouse
-54978 >first : level 40 5 0
-54983 >first : post
-54984 >first : hard
-54996 <first : ./Main
-55010 <first : 
-55010 <first : feature done=0 sigint=0 sigterm=0 san=0 reuse=0 usermove=1 analyze=0 ping=0 setboard=0 level=0 variants="crazyhouse" name="NuPuneBotul" myname="NuPuneBotul" done=1
-55011 >first : accepted done
-55011 >first : accepted sigint
-55012 >first : accepted sigterm
-55012 >first : accepted san
-55013 >first : accepted reuse
-55013 >first : accepted usermove
-55014 >first : accepted analyze
-55015 >first : accepted ping
-55015 >first : accepted setboard
-55016 >first : accepted level
-55016 >first : accepted variants
-55016 >first : accepted name
-55017 >first : accepted myname
-55017 >first : accepted done
-57169 >first : force
-StartChildProcess (dir=".") make run
-57171 >second: xboard
-protover 2
-57192 <second: ./Main
-57198 <second: 
-57199 <second: feature done=0 sigint=0 sigterm=0 san=0 reuse=0 usermove=1 analyze=0 ping=0 setboard=0 level=0 variants="crazyhouse" name="NuPuneBotul" myname="NuPuneBotul" done=1
-57199 >second: accepted done
-57199 >second: accepted sigint
-57200 >second: accepted sigterm
-57200 >second: accepted san
-57201 >second: accepted reuse
-57201 >second: accepted usermove
-57202 >second: accepted analyze
-57202 >second: accepted ping
-57203 >second: accepted setboard
-57203 >second: accepted level
-57204 >second: accepted variants
-57204 >second: accepted name
-57204 >second: accepted myname
-57205 >second: accepted done
-57207 >second: new
-random
-57207 >second: variant crazyhouse
-57208 >second: level 40 5 0
-57208 >second: post
-57209 >second: hard
-57209 >second: force
+14697 >second: variant crazyhouse
+14697 >second: level 40 5 0
+14698 >second: post
+14698 >second: hard
+14699 >second: force
+14710 >second: usermove 14711 >second: d2d3
+14712 >second: usermove 14712 >second: f7f6
+14713 >second: usermove 14713 >second: c1d2
 New game (0): NuPuneBotul-NuPuneBotul (w)
-57221 >first : computer
-57222 >first : name NuPuneBotul
-57222 >second: computer
-57223 >second: name NuPuneBotul
-57223 >first : black
-57224 >first : time 30000
-57225 >first : otim 30000
-57225 >first : white
+14714 >first : computer
+14715 >first : name NuPuneBotul
+14715 >second: computer
+14716 >second: name NuPuneBotul
+14717 >second: white
+14717 >second: time 30000
+14718 >second: otim 30000
+14719 >second: black
 book hit = (NULL)
-57227 >first : go
+14720 >second: go
 nps: w=-1, b=-1
-57228 <first : move b2b4
-57229 >second: time 30000
-57230 >second: otim 29999
+14743 <second: move e8f7
+14743 >first : time 30000
+14744 >first : otim 29997
 book hit = (NULL)
-57232 >second: usermove 57232 >second: b2b4
-57233 >second: black
-57233 >second: go
-57240 <second: move g8h6
-57241 >first : time 29999
-57242 >first : otim 29998
+14745 >first : usermove 14745 >first : e8f7
+14746 >first : white
+14746 >first : go
+14766 <first : move g2g3
+14767 >second: time 29997
+14768 >second: otim 29997
 book hit = (NULL)
-57243 >first : usermove 57243 >first : g8h6
-57271 <first : move d2d3
-57272 >second: time 29998
-57273 >second: otim 29996
+14770 >second: usermove 14771 >second: g2g3
+14806 <second: move g7g5
+14807 >first : time 29997
+14808 >first : otim 29993
 book hit = (NULL)
-57274 >second: usermove 57274 >second: d2d3
-57297 <second: move b7b6
-57299 >first : time 29996
-57299 >first : otim 29996
+14811 >first : usermove 14812 >first : g7g5
+14846 <first : move a2a3
+14848 >second: time 29993
+14850 >second: otim 29993
 book hit = (NULL)
-57301 >first : usermove 57301 >first : b7b6
-57318 <first : move c1d2
-57321 >second: time 29996
-57321 >second: otim 29994
+14851 >second: usermove 14851 >second: a2a3
+14879 <second: move h7h5
+14882 >first : time 29993
+14883 >first : otim 29990
 book hit = (NULL)
-57323 >second: usermove 57324 >second: c1d2
-57358 <second: move c7c5
-57359 >first : time 29994
-57359 >first : otim 29992
+14884 >first : usermove 14885 >first : h7h5
+14926 <first : move d3d4
+14929 >second: time 29990
+14930 >second: otim 29988
 book hit = (NULL)
-57363 >first : usermove 57365 >first : c7c5
-57386 <first : move g2g3
-57386 >second: time 29992
-57387 >second: otim 29991
+14933 >second: usermove 14933 >second: d3d4
+14968 <second: move g5g4
+14969 >first : time 29988
+14969 >first : otim 29986
 book hit = (NULL)
-57387 >second: usermove 57388 >second: g2g3
-57407 <second: move f7f6
-57408 >first : time 29991
-57408 >first : otim 29990
+14970 >first : usermove 14971 >first : g5g4
+15004 <first : move d2a5
+15005 >second: time 29986
+15005 >second: otim 29985
 book hit = (NULL)
-57410 >first : usermove 57418 >first : f7f6
-57441 <first : move e2e4
-57442 >second: time 29990
-57442 >second: otim 29988
+15006 >second: usermove 15006 >second: d2a5
+15039 <second: move b7b5
+15040 >first : time 29985
+15040 >first : otim 29982
 book hit = (NULL)
-57443 >second: usermove 57445 >second: e2e4
-57468 <second: move a7a5
-57469 >first : time 29988
-57469 >first : otim 29987
+15041 >first : usermove 15041 >first : b7b5
+15072 <first : move e2e4
+15073 >second: time 29982
+15073 >second: otim 29982
 book hit = (NULL)
-57470 >first : usermove 57471 >first : a7a5
-57490 <first : move d2e3
-57491 >second: time 29987
-57491 >second: otim 29986
+15074 >second: usermove 15074 >second: e2e4
+15106 <second: move e7e6
+15107 >first : time 29982
+15107 >first : otim 29979
 book hit = (NULL)
-57492 >second: usermove 57492 >second: d2e3
-57521 <second: move a8a7
-57522 >first : time 29986
-57522 >first : otim 29984
+15108 >first : usermove 15109 >first : e7e6
+15140 <first : move f1d3
+15141 >second: time 29979
+15141 >second: otim 29978
 book hit = (NULL)
-57524 >first : usermove 57524 >first : a8a7
-57543 <first : move e1d2
-57545 >second: time 29984
-57546 >second: otim 29984
+15142 >second: usermove 15142 >second: f1d3
+15179 <second: move c7c6
+15180 >first : time 29978
+15181 >first : otim 29975
 book hit = (NULL)
-57548 >second: usermove 57549 >second: e1d2
-57572 <second: move d7d6
-57573 >first : time 29984
-57573 >first : otim 29981
+15182 >first : usermove 15183 >first : c7c6
+15205 <first : move e1f1
+15205 >second: time 29975
+15206 >second: otim 29976
 book hit = (NULL)
-57574 >first : usermove 57575 >first : d7d6
-57598 <first : move c2c3
-57600 >second: time 29981
-57600 >second: otim 29981
+15206 >second: usermove 15207 >second: e1f1
+15242 <second: move g8e7
+15245 >first : time 29976
+15250 >first : otim 29971
 book hit = (NULL)
-57602 >second: usermove 57602 >second: c2c3
-57623 <second: move c8g4
-57624 >first : time 29981
-57624 >first : otim 29979
+15251 >first : usermove 15252 >first : g8e7
+15285 <first : move b2b4
+15285 >second: time 29971
+15286 >second: otim 29972
 book hit = (NULL)
-57625 >first : usermove 57626 >first : c8g4
-57650 <first : move d1e1
-57651 >second: time 29979
-57651 >second: otim 29978
+15286 >second: usermove 15287 >second: b2b4
+15320 <second: move h8g8
+15321 >first : time 29972
+15321 >first : otim 29967
 book hit = (NULL)
-57652 >second: usermove 57653 >second: d1e1
-57756 <second: move g4e6
-57756 >first : time 29978
-57757 >first : otim 29968
+15322 >first : usermove 15322 >first : h8g8
+15359 <first : move d3c4
+15360 >second: time 29967
+15361 >second: otim 29968
 book hit = (NULL)
-57758 >first : usermove 57758 >first : g4e6
-57795 <first : move h2h4
-57796 >second: time 29968
-57797 >second: otim 29974
+15361 >second: usermove 15362 >second: d3c4
+15405 <second: move a7a6
+15406 >first : time 29968
+15406 >first : otim 29963
 book hit = (NULL)
-57798 >second: usermove 57799 >second: h2h4
-57817 <second: move a5a4
-57818 >first : time 29974
-57818 >first : otim 29966
+15407 >first : usermove 15407 >first : a7a6
+15442 <first : move b1c3
+15447 >second: time 29963
+15448 >second: otim 29964
 book hit = (NULL)
-57819 >first : usermove 57820 >first : a5a4
-57838 <first : move f1e2
-57839 >second: time 29966
-57840 >second: otim 29972
+15449 >second: usermove 15450 >second: b1c3
+15487 <second: move g8g7
+15487 >first : time 29964
+15488 >first : otim 29959
 book hit = (NULL)
-57841 >second: usermove 57842 >second: f1e2
-57858 <second: move b8d7
-57859 >first : time 29972
-57859 >first : otim 29964
+15489 >first : usermove 15489 >first : g8g7
+15532 <first : move f2f3
+15533 >second: time 29959
+15533 >second: otim 29959
 book hit = (NULL)
-57860 >first : usermove 57861 >first : b8d7
-57892 <first : move d2c2
-57897 >second: time 29964
-57898 >second: otim 29968
-book hit = (NULL)
-57900 >second: usermove 57901 >second: d2c2
-57919 <second: move g7g6
-57919 >first : time 29968
-57920 >first : otim 29962
-book hit = (NULL)
-57921 >first : usermove 57921 >first : g7g6
-57949 <first : move e2f3
-57950 >second: time 29962
-57950 >second: otim 29965
-book hit = (NULL)
-57951 >second: usermove 57952 >second: e2f3
-57969 <second: move d6d5
-57969 >first : time 29965
-57970 >first : otim 29960
-book hit = (NULL)
-57971 >first : usermove 57971 >first : d6d5
-58001 <first : move b2b4
-GameEnds(27, Xboard: Forfeit due to invalid move: b2b4 (b2b4 via ^0, ^0) res=24, 4)
-58004 >first : result 0-1 {Xboard: Forfeit due to invalid move: b2b4 (b2b4 via ^0, ^0) res=24}
-58005 >second: result 0-1 {Xboard: Forfeit due to invalid move: b2b4 (b2b4 via ^0, ^0) res=24}
-58006 >first : quit
-58009 >second: quit
-BackwardInner(25), current 26, forward 26
-BackwardInner(24), current 25, forward 26
-BackwardInner(23), current 24, forward 26
-BackwardInner(22), current 23, forward 26
-BackwardInner(21), current 22, forward 26
-BackwardInner(20), current 21, forward 26
-BackwardInner(19), current 20, forward 26
-BackwardInner(18), current 19, forward 26
-BackwardInner(17), current 18, forward 26
-BackwardInner(16), current 17, forward 26
-BackwardInner(15), current 16, forward 26
-BackwardInner(14), current 15, forward 26
-BackwardInner(13), current 14, forward 26
-BackwardInner(12), current 13, forward 26
-BackwardInner(11), current 12, forward 26
-BackwardInner(10), current 11, forward 26
-BackwardInner(9), current 10, forward 26
-BackwardInner(8), current 9, forward 26
-BackwardInner(7), current 8, forward 26
-BackwardInner(6), current 7, forward 26
-BackwardInner(5), current 6, forward 26
-BackwardInner(4), current 5, forward 26
-BackwardInner(3), current 4, forward 26
-BackwardInner(2), current 3, forward 26
-BackwardInner(1), current 2, forward 26
-BackwardInner(0), current 1, forward 26
-BackwardInner(-1), current 0, forward 26
-BackwardInner(-1), current 0, forward 26
-BackwardInner(-1), current 0, forward 26
-ForwardInner(1), current 0, forward 26
-ForwardInner(2), current 1, forward 26
-ForwardInner(3), current 2, forward 26
-ForwardInner(4), current 3, forward 26
-ForwardInner(5), current 4, forward 26
-ForwardInner(6), current 5, forward 26
-ForwardInner(7), current 6, forward 26
-ForwardInner(8), current 7, forward 26
-ForwardInner(9), current 8, forward 26
+15534 >second: usermove 15534 >second: f2f3
+15560 <second: move g7f7
+GameEnds(26, Xboard: Forfeit due to invalid move: g7f7 (g7f7 via ^0, ^0) res=24, 4)
+15567 >first : result 1-0 {Xboard: Forfeit due to invalid move: g7f7 (g7f7 via ^0, ^0) res=24}
+15568 >second: result 1-0 {Xboard: Forfeit due to invalid move: g7f7 (g7f7 via ^0, ^0) res=24}
+15568 >first : quit
+15570 >second: quit
+GameEnds(26, Xboard: Forfeit due to invalid move: g7f7 (g7f7 via ^0, ^0) res=24, 2)
