@@ -637,7 +637,7 @@ void Bot::getKingMove(int i, int j, std::vector<Move*> &allMoves) {
   }
 }
 
-void Bot::getDropIn(std::vector<Move*> &allMoves) {
+void Bot::getDropInMove(std::vector<Move*> &allMoves) {
   for(int i = 0; i < boardSize; i++) {
     for(int j = 0; j < boardSize; j++) {
       if(chessBoard[i][j].side == NONE) {
@@ -708,7 +708,7 @@ Move* Bot::calculateNextMove() {
     }
   }
   getCastleMove(allMoves);
-  getDropIn(allMoves);
+  getDropInMove(allMoves);
   if(allMoves.size()!= 0) {
     Move* bestMove = allMoves[rand() % allMoves.size()];
     int destination_x = bestMove->getDestination().value().at(0) - 'a';

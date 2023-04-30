@@ -47,7 +47,7 @@ class Bot {
   void getBishopMove(int i, int j, std::vector<Move*> &allMoves);
   void getQueenMove(int i, int j, std::vector<Move*> &allMoves);
   void getKingMove(int i, int j, std::vector<Move*> &allMoves);
-  void getDropIn(std::vector<Move*> &allMoves);
+  void getDropInMove(std::vector<Move*> &allMoves);
 
   Move* calculateNextMove();
 
