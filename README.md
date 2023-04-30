@@ -32,7 +32,7 @@ TODO
 ## Responsabilitățile membrilor
 Gândirea generală a soluției a fost un efort comun, dar fiecare membru al echipei a depus efort particular în următoarele:
 
-* Ștefan și Tudor - implementat cod
+* Ștefan și Tudor - implementare cod
 * Diana - testare
 * Andrei - scriere documentație
 ## Surse
