@@ -5,8 +5,6 @@ __Membri:__
 * Șerban Andrei-Teodor, 324CC
 * Pințoiu Alina-Diana, 324CC
 * Dascălu Ștefan-Teodor, 324CC
-* Petracovici Tudor, 324CC
-
 __Limbaj__: C++
 
 ## Instrucțiuni de compilare
@@ -54,9 +52,9 @@ TODO
 ## Responsabilitățile membrilor
 Gândirea generală a soluției a fost un efort comun, dar fiecare membru al echipei a depus efort particular în următoarele:
 
-* Ștefan și Tudor - implementare cod
-* Diana - testare
-* Andrei - scriere documentație
+* Ștefan-Teodor Dascalu - implementare cod
+* Alina-Diana Pintoiu - testare
+* Andrei-Teodor Serban - scriere documentație
 ## Surse
 [Documentația Xboard](https://www.gnu.org/software/xboard/)
 
